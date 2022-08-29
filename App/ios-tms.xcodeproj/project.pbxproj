@@ -8,17 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */; };
-		88A0164128BC56D200111EA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0164028BC56D200111EA9 /* ContentView.swift */; };
 		88A0164328BC56D400111EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164228BC56D400111EA9 /* Assets.xcassets */; };
 		88A0164628BC56D400111EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164528BC56D400111EA9 /* Preview Assets.xcassets */; };
+		88A0164F28BC5A8C00111EA9 /* Shipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0164E28BC5A8C00111EA9 /* Shipment.swift */; };
+		88A0165128BC5A9600111EA9 /* ShipmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165028BC5A9600111EA9 /* ShipmentItem.swift */; };
+		88A0165328BC5AA500111EA9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165228BC5AA500111EA9 /* Address.swift */; };
+		88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165428BC5CD600111EA9 /* Carrier.swift */; };
+		88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165828BC5D7700111EA9 /* CentralView.swift */; };
+		88A0165B28BC5D9C00111EA9 /* ShipmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */; };
+		88A0165F28BC5DC100111EA9 /* CreateShipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165E28BC5DC100111EA9 /* CreateShipmentView.swift */; };
+		88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0166028BC5DEF00111EA9 /* ShipmentDetailsView.swift */; };
+		88A0166528BC5E2B00111EA9 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0166428BC5E2B00111EA9 /* QuotesView.swift */; };
+		88A0166828BC613800111EA9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0166728BC613800111EA9 /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		88A0163B28BC56D200111EA9 /* ios-tms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-tms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tmsApp.swift; sourceTree = "<group>"; };
-		88A0164028BC56D200111EA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		88A0164228BC56D400111EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88A0164528BC56D400111EA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		88A0164E28BC5A8C00111EA9 /* Shipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shipment.swift; sourceTree = "<group>"; };
+		88A0165028BC5A9600111EA9 /* ShipmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentItem.swift; sourceTree = "<group>"; };
+		88A0165228BC5AA500111EA9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		88A0165428BC5CD600111EA9 /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
+		88A0165828BC5D7700111EA9 /* CentralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralView.swift; sourceTree = "<group>"; };
+		88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentsView.swift; sourceTree = "<group>"; };
+		88A0165E28BC5DC100111EA9 /* CreateShipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShipmentView.swift; sourceTree = "<group>"; };
+		88A0166028BC5DEF00111EA9 /* ShipmentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentDetailsView.swift; sourceTree = "<group>"; };
+		88A0166428BC5E2B00111EA9 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		88A0166728BC613800111EA9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +69,9 @@
 		88A0163D28BC56D200111EA9 /* ios-tms */ = {
 			isa = PBXGroup;
 			children = (
+				88A0164D28BC5A8200111EA9 /* Models */,
+				88A0164C28BC5A7C00111EA9 /* Views */,
 				88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */,
-				88A0164028BC56D200111EA9 /* ContentView.swift */,
 				88A0164228BC56D400111EA9 /* Assets.xcassets */,
 				88A0164428BC56D400111EA9 /* Preview Content */,
 			);
@@ -65,6 +84,54 @@
 				88A0164528BC56D400111EA9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		88A0164C28BC5A7C00111EA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88A0166628BC612E00111EA9 /* Dashboard */,
+				88A0166328BC5E0E00111EA9 /* Quotes */,
+				88A0166228BC5DF800111EA9 /* Shipments */,
+				88A0165828BC5D7700111EA9 /* CentralView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88A0164D28BC5A8200111EA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88A0164E28BC5A8C00111EA9 /* Shipment.swift */,
+				88A0165028BC5A9600111EA9 /* ShipmentItem.swift */,
+				88A0165228BC5AA500111EA9 /* Address.swift */,
+				88A0165428BC5CD600111EA9 /* Carrier.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88A0166228BC5DF800111EA9 /* Shipments */ = {
+			isa = PBXGroup;
+			children = (
+				88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */,
+				88A0165E28BC5DC100111EA9 /* CreateShipmentView.swift */,
+				88A0166028BC5DEF00111EA9 /* ShipmentDetailsView.swift */,
+			);
+			path = Shipments;
+			sourceTree = "<group>";
+		};
+		88A0166328BC5E0E00111EA9 /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				88A0166428BC5E2B00111EA9 /* QuotesView.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		88A0166628BC612E00111EA9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				88A0166728BC613800111EA9 /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A0164128BC56D200111EA9 /* ContentView.swift in Sources */,
+				88A0165F28BC5DC100111EA9 /* CreateShipmentView.swift in Sources */,
+				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
+				88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */,
+				88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */,
+				88A0165128BC5A9600111EA9 /* ShipmentItem.swift in Sources */,
+				88A0165B28BC5D9C00111EA9 /* ShipmentsView.swift in Sources */,
+				88A0166828BC613800111EA9 /* DashboardView.swift in Sources */,
+				88A0166528BC5E2B00111EA9 /* QuotesView.swift in Sources */,
 				88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */,
+				88A0164F28BC5A8C00111EA9 /* Shipment.swift in Sources */,
+				88A0165328BC5AA500111EA9 /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

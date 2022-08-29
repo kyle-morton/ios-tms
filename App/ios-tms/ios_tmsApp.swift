@@ -11,7 +11,7 @@ import SwiftUI
 struct ios_tmsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CentralView()
         }
     }
 }
