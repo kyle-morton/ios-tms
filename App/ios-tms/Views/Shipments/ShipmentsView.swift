@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ShipmentsView: View {
+    
+    @StateObject var shipmentsVm = ShipmentListViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(shipmentsVm.items) { shipment in
+                    Section(header: Text("Shipment \(shipment.id)")) {
+                        
+                    }
+                }
+            }
+        }
+        .navigationTitle("Shipments")
+        .listStyle(.grouped)
     }
 }
 

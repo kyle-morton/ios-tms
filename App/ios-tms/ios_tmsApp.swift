@@ -12,6 +12,7 @@ struct ios_tmsApp: App {
     var body: some Scene {
         WindowGroup {
             CentralView()
+
         }
     }
 }
