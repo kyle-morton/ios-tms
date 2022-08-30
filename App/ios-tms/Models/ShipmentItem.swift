@@ -18,5 +18,7 @@ struct ShipmentItem : Codable, Identifiable {
         self.id = id
         self.units = units
         self.weight = weight
+        self.description = ""
+        self.shipmentId = 0
     }
 }

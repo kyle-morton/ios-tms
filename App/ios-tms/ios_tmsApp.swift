@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct ios_tmsApp: App {
     
-    @StateObject var shipmentsVM = ShipmentListViewModel()
+    @StateObject var shipmentStore = ShipmentStore()
     
     var body: some Scene {
         WindowGroup {

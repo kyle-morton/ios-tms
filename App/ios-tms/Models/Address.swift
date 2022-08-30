@@ -18,4 +18,13 @@ struct Address: Codable, Identifiable {
     var label: String {
         return "\(city), \(state) \(zipCode)"
     }
+    
+    init(id: Int, city: String, state: String, zipCode: String) {
+        self.id = id
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
+        self.addressLineOne = ""
+        self.addressLineTwo = ""
+    }
 }

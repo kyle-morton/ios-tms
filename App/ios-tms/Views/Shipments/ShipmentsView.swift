@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ShipmentsView: View {
     
-    @EnvironmentObject var shipmentsVM: ShipmentListViewModel
+    @EnvironmentObject var shipmentStore: ShipmentStore
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(shipmentsVM.shipments) { shipment in
-                    Section(header: Text("Shipment \(shipment.id.formatted())")) {
+                ForEach(shipmentStore.shipments) { shipment in
+                    Section(header: Text("Shipment \(shipment.id)")) {
                         
                     }
                 }
@@ -29,6 +29,6 @@ struct ShipmentsView: View {
 struct ShipmentsView_Previews: PreviewProvider {
     static var previews: some View {
         ShipmentsView()
-            .environmentObject(ShipmentListViewModel.example)
+            .environmentObject(ShipmentStore.example)
     }
 }

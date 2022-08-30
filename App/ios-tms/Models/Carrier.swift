@@ -11,4 +11,10 @@ struct Carrier: Codable, Identifiable {
     var id: Int
     var name: String
     var scac: String
+    
+    init(id: Int, name: String, scac: String) {
+        self.id = id
+        self.name = name
+        self.scac = scac
+    }
 }

@@ -8,24 +8,43 @@
 import Foundation
 
 struct Shipment: Codable, Identifiable {
-    var id: Int?
-    var originId: Int?
-    var destinationId: Int?
-    var carrierId: Int?
-    var origin: Address?
-    var destination: Address?
-    var carrier: Carrier?
-    var items: [ShipmentItem]
-    var rate: Decimal?
-    var cost: Decimal?
+    var id: Int
+    var origin: String
+    var destination: String
+    var carrier: String
+    var items: Int
+    var weight: Decimal
+    var rate: Decimal
     
-    init(id: Int, origin: Address, destination: Address, carrier: Carrier, items: [ShipmentItem], customerRate: Decimal) {
+    init(id: Int, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal) {
         self.id = id
         self.origin = origin
         self.destination = destination
         self.carrier = carrier
         self.items = items
-        self.rate = customerRate
+        self.weight = weight
+        self.rate = rate
     }
+    
+//    var originId: Int?
+//    var destinationId: Int?
+//    var carrierId: Int?
+//    var origin: Address?
+//    var destination: Address?
+//    var carrier: Carrier?
+//    var items: [ShipmentItem]
+//    var rate: Decimal?
+//    var cost: Decimal?
+    
+//    init(id: Int, origin: Address, destination: Address, carrier: Carrier, items: [ShipmentItem], customerRate: Decimal) {
+//        self.id = id
+//        self.origin = origin
+//        self.destination = destination
+//        self.carrier = carrier
+//        self.items = items
+//        self.rate = customerRate
+//    }
+    
+    
     
 }
