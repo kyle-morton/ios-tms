@@ -13,4 +13,10 @@ struct ShipmentItem : Codable, Identifiable {
     var units: Int
     var weight: Decimal
     var description: String
+    
+    init(id: Int, units: Int, weight: Decimal) {
+        self.id = id
+        self.units = units
+        self.weight = weight
+    }
 }

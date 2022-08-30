@@ -14,4 +14,8 @@ struct Address: Codable, Identifiable {
     var city: String
     var state: String
     var zipCode: String
+    
+    var label: String {
+        return "\(city), \(state) \(zipCode)"
+    }
 }

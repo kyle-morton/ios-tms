@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct ios_tmsApp: App {
+    
+    @StateObject var shipmentsVM = ShipmentListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             CentralView()
