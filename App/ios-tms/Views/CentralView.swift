@@ -29,5 +29,6 @@ struct CentralView: View {
 struct CentralView_Previews: PreviewProvider {
     static var previews: some View {
         CentralView()
+            .environmentObject(ShipmentStore.example)
     }
 }

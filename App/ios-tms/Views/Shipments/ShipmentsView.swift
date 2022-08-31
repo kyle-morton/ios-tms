@@ -15,8 +15,8 @@ struct ShipmentsView: View {
         NavigationView {
             List {
                 ForEach(shipmentStore.shipments) { shipment in
-                    Section(header: Text("Shipment \(shipment.id)")) {
-                        
+                    NavigationLink(destination: ShipmentDetailsView(shipment: shipment)) {
+                        ShipmentRowView(shipment: shipment)
                     }
                 }
             }

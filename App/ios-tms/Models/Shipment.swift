@@ -8,7 +8,10 @@
 import Foundation
 
 struct Shipment: Codable, Identifiable {
+    
+    // simplifing model to the below (for now)
     var id: Int
+    var bol: String
     var origin: String
     var destination: String
     var carrier: String
@@ -16,8 +19,9 @@ struct Shipment: Codable, Identifiable {
     var weight: Decimal
     var rate: Decimal
     
-    init(id: Int, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal) {
+    init(id: Int, bol: String, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal) {
         self.id = id
+        self.bol = bol
         self.origin = origin
         self.destination = destination
         self.carrier = carrier

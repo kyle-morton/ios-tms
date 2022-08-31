@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9028BF100100479139 /* QuoteDetailsView.swift */; };
+		888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9228BF10C700479139 /* ShipmentRowView.swift */; };
 		88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */; };
 		88A0164328BC56D400111EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164228BC56D400111EA9 /* Assets.xcassets */; };
 		88A0164628BC56D400111EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164528BC56D400111EA9 /* Preview Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		888FFD9028BF100100479139 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
+		888FFD9228BF10C700479139 /* ShipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentRowView.swift; sourceTree = "<group>"; };
 		88A0163B28BC56D200111EA9 /* ios-tms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-tms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tmsApp.swift; sourceTree = "<group>"; };
 		88A0164228BC56D400111EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */,
 				88A0165E28BC5DC100111EA9 /* CreateShipmentView.swift */,
 				88A0166028BC5DEF00111EA9 /* ShipmentDetailsView.swift */,
+				888FFD9228BF10C700479139 /* ShipmentRowView.swift */,
 			);
 			path = Shipments;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				88A0166428BC5E2B00111EA9 /* QuotesView.swift */,
+				888FFD9028BF100100479139 /* QuoteDetailsView.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -216,9 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A0165F28BC5DC100111EA9 /* CreateShipmentView.swift in Sources */,
+				888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */,
 				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
 				88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */,
 				88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */,
+				888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */,
 				88A0165128BC5A9600111EA9 /* ShipmentItem.swift in Sources */,
 				88A0165B28BC5D9C00111EA9 /* ShipmentsView.swift in Sources */,
 				88A0167128BDB43D00111EA9 /* ShipmentStore.swift in Sources */,

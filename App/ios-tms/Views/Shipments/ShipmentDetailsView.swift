@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ShipmentDetailsView: View {
+    
+    let shipment: Shipment
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Shipment: \(shipment.bol)")
     }
 }
 
 struct ShipmentDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ShipmentDetailsView()
+        ShipmentDetailsView(shipment: ShipmentStore.example.shipments[0])
     }
 }

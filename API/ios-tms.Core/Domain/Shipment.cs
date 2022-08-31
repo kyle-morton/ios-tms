@@ -3,6 +3,7 @@ namespace ios_tms.Core.Domain;
 
 public class Shipment : EntityBase
 {
+    public string Bol { get; set; }
     public int OriginId { get; set; }
     public int DestinationId { get; set; }
     public int CarrierId { get; set; }
