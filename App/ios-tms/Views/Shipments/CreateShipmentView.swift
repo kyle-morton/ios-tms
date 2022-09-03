@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct CreateShipmentView: View {
+    
+    @State private var showingSubmittingShipmentAlert = false;
+    
     var body: some View {
         Form {
 //                VStack {
 //
 //                }
             Button("Submit") {
+                showingSubmittingShipmentAlert.toggle()
             }
+        }
+        .alert(isPresented: $showingSubmittingShipmentAlert) {
+            Alert(title: Text("Shipment confirmed"), message: Text("Your total was () – thank you!"), dismissButton: .default(Text("OK")))
         }
         .navigationTitle("New Shipment")
         .navigationBarTitleDisplayMode(.inline)
