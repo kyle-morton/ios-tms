@@ -12,7 +12,11 @@ struct ShipmentDetailsView: View {
     let shipment: Shipment
     
     var body: some View {
-        Text("Shipment: \(shipment.bol)")
+        NavigationView {
+            Text("BOL: \(shipment.bol)")
+        }
+        .navigationTitle("BOL: \(shipment.bol)")
+        
     }
 }
 

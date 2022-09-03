@@ -20,9 +20,14 @@ struct ShipmentsView: View {
                     }
                 }
             }
+            .toolbar {
+                NavigationLink(destination: CreateShipmentView()) {
+                    Image(systemName: "plus")
+                }
+            }
         }
         .navigationTitle("Shipments")
-        .listStyle(.grouped)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

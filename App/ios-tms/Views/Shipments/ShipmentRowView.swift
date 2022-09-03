@@ -12,19 +12,22 @@ struct ShipmentRowView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(shipment.bol)")
-                .fontWeight(.bold)
-                .font(.headline)
             HStack {
-//                Label("\(shipment.origin)", systemImage: "list.dash")
+                Text("\(shipment.bol)")
+                    .fontWeight(.bold)
+                    .font(.headline)
+                    
+                Text("$\(shipment.rate.formatted())")
+                    .font(.subheadline)
+            }
+
+            HStack {
                 Text("\(shipment.origin)")
                     .font(.subheadline)
                 Text(" > ")
                 Text("\(shipment.destination)")
                     .font(.subheadline)
             }
-            Text("$\(shipment.rate.formatted())")
-                .font(.subheadline)
         }
         .padding()
         
