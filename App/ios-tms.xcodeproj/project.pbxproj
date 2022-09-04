@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9028BF100100479139 /* QuoteDetailsView.swift */; };
 		888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9228BF10C700479139 /* ShipmentRowView.swift */; };
+		888FFD9528C46A4900479139 /* ShipmentCharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9428C46A4900479139 /* ShipmentCharge.swift */; };
 		88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */; };
 		88A0164328BC56D400111EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164228BC56D400111EA9 /* Assets.xcassets */; };
 		88A0164628BC56D400111EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164528BC56D400111EA9 /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		888FFD9028BF100100479139 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
 		888FFD9228BF10C700479139 /* ShipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentRowView.swift; sourceTree = "<group>"; };
+		888FFD9428C46A4900479139 /* ShipmentCharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentCharge.swift; sourceTree = "<group>"; };
 		88A0163B28BC56D200111EA9 /* ios-tms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-tms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tmsApp.swift; sourceTree = "<group>"; };
 		88A0164228BC56D400111EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				88A0165028BC5A9600111EA9 /* ShipmentItem.swift */,
 				88A0165228BC5AA500111EA9 /* Address.swift */,
 				88A0165428BC5CD600111EA9 /* Carrier.swift */,
+				888FFD9428C46A4900479139 /* ShipmentCharge.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
 				88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */,
 				88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */,
+				888FFD9528C46A4900479139 /* ShipmentCharge.swift in Sources */,
 				888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */,
 				88A0165128BC5A9600111EA9 /* ShipmentItem.swift in Sources */,
 				88A0165B28BC5D9C00111EA9 /* ShipmentsView.swift in Sources */,
