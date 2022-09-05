@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct CentralView: View {
+    
+    @EnvironmentObject var shipmentStore: ShipmentStore
+    @EnvironmentObject var carrierStore: CarrierStore
+    
     var body: some View {
         TabView {
             DashboardView()
@@ -21,6 +25,7 @@ struct CentralView: View {
             QuotesView()
                 .tabItem({
                     Label("Quotes", systemImage: "dollarsign.circle")
+//                    badge("5")
                 })
         }
     }
@@ -30,5 +35,6 @@ struct CentralView_Previews: PreviewProvider {
     static var previews: some View {
         CentralView()
             .environmentObject(ShipmentStore.example)
+            .environmentObject(CarrierStore.example)
     }
 }

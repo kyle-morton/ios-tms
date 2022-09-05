@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Carrier: Codable, Identifiable {
+struct Carrier: Codable, Identifiable, Hashable {
     var id: Int
     var name: String
     var scac: String

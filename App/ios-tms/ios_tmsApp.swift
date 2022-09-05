@@ -11,11 +11,13 @@ import SwiftUI
 struct ios_tmsApp: App {
     
     @StateObject var shipmentStore = ShipmentStore()
+    @StateObject var carrierStore = CarrierStore()
     
     var body: some Scene {
         WindowGroup {
             CentralView()
-
+                .environmentObject(shipmentStore)
+                .environmentObject(carrierStore)
         }
     }
 }

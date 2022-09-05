@@ -9,13 +9,19 @@ import SwiftUI
 
 struct CreateShipmentView: View {
     
-    @State private var showingSubmittingShipmentAlert = false;
+    @EnvironmentObject var shipmentStore: ShipmentStore
+    @EnvironmentObject var carrierStore: CarrierStore
+    
+//    @State private var showingGetShipmentRateAlert = false
+    @State private var showingConfirmView = false;
+    
     @State private var originCity: String = "";
     @State private var originState: String = "";
     @State private var originZipCode: String = "";
     @State private var destinationCity: String = "";
     @State private var destinationState: String = "";
     @State private var destinationZipCode: String = "";
+    @State private var carrierId: Int?;
     @State private var units: Int?;
     @State private var weightInPounds: Int?;
     
@@ -35,6 +41,11 @@ struct CreateShipmentView: View {
         ]
     }
     
+    func validateShipment() {
+        
+//        return true;
+    }
+    
     var body: some View {
         Form {
             Section(header: Text("Origin")) {
@@ -51,22 +62,51 @@ struct CreateShipmentView: View {
                 TextField("Units", value: $units, format: .number)
                 TextField("Weight In Pounds", value: $weightInPounds, format: .number)
             }
-            Section(header: Text("TOTAL: \(totalPrice)").font(.subheadline)) {
+            Section(header: Text("Carrier")) {
+                Picker("Selected Carrier", selection: $carrierId) {
+                    ForEach(carrierStore.carriers, id: \.id) { carrier in
+                        Text("\(carrier.name) - \(carrier.scac)").tag(carrier as Carrier?)
+                    }
+                }
             }
-            Button("Dispatch") {
-                showingSubmittingShipmentAlert.toggle()
+
+            Button("Get Rate") {
+                showingConfirmView.toggle()
+//                if (!validateShipment()) {
+//                    // display error
+//                }
+                
+                // go to confirm screen
             }
-        }
-        .alert(isPresented: $showingSubmittingShipmentAlert) {
-            Alert(title: Text("Shipment confirmed"), message: Text("Your total was () – thank you!"), dismissButton: .default(Text("OK")))
         }
         .navigationTitle("New Shipment")
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showingConfirmView) {
+            NavigationView {
+                ConfirmShipmentView()
+//                            .navigationTitle(scrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                showingConfirmView = false;
+                            }
+                        };
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                showingConfirmView = false;
+//                                        scrum.update(from: data);
+                            }
+                        }
+                    };
+            }
+            
+        };
     }
 }
 
 struct CreateShipmentView_Previews: PreviewProvider {
     static var previews: some View {
         CreateShipmentView()
+            .environmentObject(CarrierStore.example)
     }
 }

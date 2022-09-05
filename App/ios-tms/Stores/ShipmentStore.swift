@@ -7,7 +7,9 @@
 
 import Foundation
 
-class ShipmentStore: ObservableObject {
+// Store == Service
+
+class ShipmentStore: TmsStoreProctocol {
     @Published var shipments: [Shipment] = [];
     
     static func load() {
@@ -19,6 +21,7 @@ class ShipmentStore: ObservableObject {
     }
     
     init() {
+        self.shipments = []
     }
     
     init(shipments: [Shipment]) {

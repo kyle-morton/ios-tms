@@ -10,8 +10,10 @@ import SwiftUI
 struct ShipmentsView: View {
     
     @EnvironmentObject var shipmentStore: ShipmentStore
+    @EnvironmentObject var carrierStore: CarrierStore
     
     var body: some View {
+        
         NavigationView {
             List {
                 ForEach(shipmentStore.shipments) { shipment in
@@ -26,8 +28,6 @@ struct ShipmentsView: View {
                 }
             }
         }
-        .navigationTitle("Shipments")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -35,5 +35,6 @@ struct ShipmentsView_Previews: PreviewProvider {
     static var previews: some View {
         ShipmentsView()
             .environmentObject(ShipmentStore.example)
+            .environmentObject(CarrierStore.example)
     }
 }
