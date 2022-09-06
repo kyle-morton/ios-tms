@@ -25,9 +25,11 @@
     <None Remove="ViewModels\" />
     <None Remove="ViewModels\Carriers\" />
     <None Remove="Bogus" />
+    <None Remove="ViewModels\Shipments\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Carriers\" />
+    <Folder Include="ViewModels\Shipments\" />
   </ItemGroup>
 </Project>

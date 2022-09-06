@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<ICarrierService, CarrierService>();
+builder.Services.AddTransient<IShipmentService, ShipmentService>();
 
 var app = builder.Build();
 

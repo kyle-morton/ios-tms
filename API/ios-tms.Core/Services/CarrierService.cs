@@ -23,7 +23,7 @@ public class CarrierService : ICarrierService
         {
             Id = 3,
             Name = "Pitt Ohio",
-            Scac = "PITT"
+            Scac = "PITD"
         },
         new Carrier
         {
