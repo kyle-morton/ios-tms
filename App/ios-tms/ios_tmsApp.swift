@@ -21,10 +21,11 @@ struct ios_tmsApp: App {
             CentralView()
                 .task {
                     do {
-                        carrierStore.carriers = try await carrierStore.load();
+                        carrierStore.carriers = try await carrierStore.load()
+                        shipmentStore.shipments = try await shipmentStore.load()
                     }
                     catch {
-                        errorWrapper = TMSError(error: error, guidance: "Try again later.");
+                        errorWrapper = TMSError(error: error, guidance: "Try again later.")
                     }
                 }
                 .environmentObject(shipmentStore)

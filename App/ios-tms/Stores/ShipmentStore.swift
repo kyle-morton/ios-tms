@@ -9,13 +9,30 @@ import Foundation
 
 // Store == Service
 
-class ShipmentStore: TmsStoreProctocol {
+class ShipmentStore: ObservableObject {
     @Published var shipments: [Shipment] = [];
     
-    static func load() {
-        // get initial list of shipments from the server
-    }
+    func load() async throws -> [Shipment] {
+        
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments")
+            else { fatalError("Missing URL") }
+        
+        print("url: \(url.absoluteURL)")
+        
+        let urlRequest = URLRequest(url: url);
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest);
     
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+            else { fatalError("Error while fetching carriers"); }
+        
+        print("response: \(data)");
+        
+        let decodedShipments = try JSONDecoder().decode([Shipment].self, from: data);
+        print("Async decodedShipments", decodedShipments)
+
+        return decodedShipments
+    }
     static func loadMore() {
         // get more shipments from the server
     }
