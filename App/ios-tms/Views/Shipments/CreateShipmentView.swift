@@ -21,7 +21,7 @@ struct CreateShipmentView: View {
     @State private var destinationCity: String = "";
     @State private var destinationState: String = "";
     @State private var destinationZipCode: String = "";
-    @State private var carrierId: Int?;
+    @State private var carrierId = 0;
     @State private var units: Int?;
     @State private var weightInPounds: Int?;
     
@@ -64,8 +64,8 @@ struct CreateShipmentView: View {
             }
             Section(header: Text("Carrier")) {
                 Picker("Selected Carrier", selection: $carrierId) {
-                    ForEach(carrierStore.carriers, id: \.id) { carrier in
-                        Text("\(carrier.name) - \(carrier.scac)").tag(carrier as Carrier?)
+                    ForEach(carrierStore.carriers, id: \.id) {
+                        Text("\($0.name) - \($0.scac)")
                     }
                 }
             }
@@ -92,7 +92,7 @@ struct CreateShipmentView: View {
                             }
                         };
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
+                            Button("Confirm") {
                                 showingConfirmView = false;
 //                                        scrum.update(from: data);
                             }

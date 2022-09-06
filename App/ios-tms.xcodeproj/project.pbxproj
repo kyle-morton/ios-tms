@@ -14,6 +14,9 @@
 		888FFD9928C554E000479139 /* CarrierStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9828C554E000479139 /* CarrierStore.swift */; };
 		888FFD9B28C554E900479139 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9A28C554E900479139 /* QuoteStore.swift */; };
 		888FFDA028C5559000479139 /* TmsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9F28C5559000479139 /* TmsStoreProtocol.swift */; };
+		888FFDA628C69BBA00479139 /* ConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDA528C69BBA00479139 /* ConfigurationHelper.swift */; };
+		888FFDA828C6A29B00479139 /* TMSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDA728C6A29B00479139 /* TMSError.swift */; };
+		888FFDAA28C6A2C200479139 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDA928C6A2C200479139 /* ErrorView.swift */; };
 		88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */; };
 		88A0164328BC56D400111EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164228BC56D400111EA9 /* Assets.xcassets */; };
 		88A0164628BC56D400111EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164528BC56D400111EA9 /* Preview Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		888FFD9828C554E000479139 /* CarrierStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierStore.swift; sourceTree = "<group>"; };
 		888FFD9A28C554E900479139 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 		888FFD9F28C5559000479139 /* TmsStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmsStoreProtocol.swift; sourceTree = "<group>"; };
+		888FFDA528C69BBA00479139 /* ConfigurationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationHelper.swift; sourceTree = "<group>"; };
+		888FFDA728C6A29B00479139 /* TMSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMSError.swift; sourceTree = "<group>"; };
+		888FFDA928C6A2C200479139 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		88A0163B28BC56D200111EA9 /* ios-tms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-tms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tmsApp.swift; sourceTree = "<group>"; };
 		88A0164228BC56D400111EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +80,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		888FFDA428C69BB200479139 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				888FFDA528C69BBA00479139 /* ConfigurationHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		88A0163228BC56D200111EA9 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +107,7 @@
 		88A0163D28BC56D200111EA9 /* ios-tms */ = {
 			isa = PBXGroup;
 			children = (
+				888FFDA428C69BB200479139 /* Helpers */,
 				88A0166F28BDB43400111EA9 /* Stores */,
 				88A0164D28BC5A8200111EA9 /* Models */,
 				88A0164C28BC5A7C00111EA9 /* Views */,
@@ -118,6 +133,7 @@
 				88A0166328BC5E0E00111EA9 /* Quotes */,
 				88A0166228BC5DF800111EA9 /* Shipments */,
 				88A0165828BC5D7700111EA9 /* CentralView.swift */,
+				888FFDA928C6A2C200479139 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +146,7 @@
 				88A0165228BC5AA500111EA9 /* Address.swift */,
 				88A0165428BC5CD600111EA9 /* Carrier.swift */,
 				888FFD9428C46A4900479139 /* ShipmentCharge.swift */,
+				888FFDA728C6A29B00479139 /* TMSError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,8 +264,10 @@
 				88A0165F28BC5DC100111EA9 /* CreateShipmentView.swift in Sources */,
 				888FFDA028C5559000479139 /* TmsStoreProtocol.swift in Sources */,
 				888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */,
+				888FFDA828C6A29B00479139 /* TMSError.swift in Sources */,
 				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
 				88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */,
+				888FFDA628C69BBA00479139 /* ConfigurationHelper.swift in Sources */,
 				88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */,
 				888FFD9928C554E000479139 /* CarrierStore.swift in Sources */,
 				888FFD9728C5544200479139 /* ConfirmShipmentView.swift in Sources */,
@@ -263,6 +282,7 @@
 				88A0164F28BC5A8C00111EA9 /* Shipment.swift in Sources */,
 				888FFD9B28C554E900479139 /* QuoteStore.swift in Sources */,
 				88A0165328BC5AA500111EA9 /* Address.swift in Sources */,
+				888FFDAA28C6A2C200479139 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

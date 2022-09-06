@@ -9,7 +9,7 @@ import Foundation
 
 protocol TmsStoreProctocol : ObservableObject {
     
-    static func load() // get initial list from the server
-    static func loadMore()  // get more from the server
+    static func load() async throws // get initial list from the server
+    static func loadMore() async throws // get more from the server
     
 }

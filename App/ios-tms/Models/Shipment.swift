@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Shipment: Codable, Identifiable {
+struct Shipment: Identifiable, Codable {
     
     // simplifing model to the below (for now)
     var id: Int

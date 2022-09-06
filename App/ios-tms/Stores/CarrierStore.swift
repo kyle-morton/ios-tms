@@ -7,15 +7,33 @@
 
 import Foundation
 
-class CarrierStore: TmsStoreProctocol {
+class CarrierStore: ObservableObject {
     @Published var carriers: [Carrier] = [];
     
-    static func load() {
-        // get initial list of carriers from the server
+    func load() async throws -> [Carrier] {
+        
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/carriers")
+            else { fatalError("Missing URL") }
+        
+        print("url: \(url.absoluteURL)")
+        
+        let urlRequest = URLRequest(url: url);
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest);
+    
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+            else { fatalError("Error while fetching carriers"); }
+        
+//        print("response: \(data)");
+        
+        let decodedCarriers = try JSONDecoder().decode([Carrier].self, from: data);
+//        print("Async decodedCarriers", decodedCarriers)
+
+        return decodedCarriers
     }
     
-    static func loadMore() {
-        // get more shipments from the server
+    func loadMore() {
+        // get more carriers from the server
     }
     
     init() {
