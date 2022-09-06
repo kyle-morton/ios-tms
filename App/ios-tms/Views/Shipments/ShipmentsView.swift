@@ -12,9 +12,9 @@ struct ShipmentsView: View {
     @EnvironmentObject var shipmentStore: ShipmentStore
     @EnvironmentObject var carrierStore: CarrierStore
     
+    @State var isLoadingShipments = true
+    
     var body: some View {
-        
-        NavigationView {
             List {
                 ForEach(shipmentStore.shipments) { shipment in
                     NavigationLink(destination: ShipmentDetailsView(shipment: shipment)) {
@@ -27,14 +27,16 @@ struct ShipmentsView: View {
                     Image(systemName: "plus")
                 }
             }
-        }
+        
     }
 }
 
 struct ShipmentsView_Previews: PreviewProvider {
     static var previews: some View {
-        ShipmentsView()
-            .environmentObject(ShipmentStore.example)
-            .environmentObject(CarrierStore.example)
+        NavigationView {
+            ShipmentsView()
+                .environmentObject(ShipmentStore.example)
+                .environmentObject(CarrierStore.example)
+        }
     }
 }

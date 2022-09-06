@@ -13,20 +13,22 @@ struct CentralView: View {
     @EnvironmentObject var carrierStore: CarrierStore
     
     var body: some View {
-        TabView {
-            DashboardView()
-                .tabItem({
-                    Label("Home", systemImage: "house")
-                })
-            ShipmentsView()
-                .tabItem({
-                    Label("Shipments", systemImage: "bus")
-                })
-            QuotesView()
-                .tabItem({
-                    Label("Quotes", systemImage: "dollarsign.circle")
-//                    badge("5")
-                })
+        NavigationView {
+            TabView {
+                DashboardView()
+                    .tabItem({
+                        Label("Home", systemImage: "house")
+                    })
+                ShipmentsView()
+                    .tabItem({
+                        Label("Shipments", systemImage: "bus")
+                    })
+                QuotesView()
+                    .tabItem({
+                        Label("Quotes", systemImage: "dollarsign.circle")
+    //                    badge("5")
+                    })
+            }
         }
     }
 }

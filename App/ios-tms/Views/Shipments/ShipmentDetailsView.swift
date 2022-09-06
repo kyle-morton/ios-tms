@@ -12,11 +12,12 @@ struct ShipmentDetailsView: View {
     let shipment: Shipment
     
     var body: some View {
-        NavigationView {
+        
+        VStack {
+//            ProgressView(title: "Fetching Shipment Details")
             Text("BOL: \(shipment.bol)")
         }
         .navigationTitle("BOL: \(shipment.bol)")
-        
     }
 }
 

@@ -14,22 +14,28 @@ struct ios_tmsApp: App {
     @StateObject var carrierStore = CarrierStore()
     
     @State private var errorWrapper: TMSError?;
+    @State private var isLoadingStartingData = true;
     
     var body: some Scene {
         WindowGroup {
-            
-            CentralView()
-                .task {
-                    do {
-                        carrierStore.carriers = try await carrierStore.load()
-                        shipmentStore.shipments = try await shipmentStore.load()
+//            LoadingView(isShowing: $isLoadingStartingData) {
+                CentralView()
+                    .task {
+                        do {
+                            carrierStore.carriers = try await carrierStore.load()
+                            shipmentStore.shipments = try await shipmentStore.load()
+                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
+                        }
+                        catch {
+                            errorWrapper = TMSError(error: error, guidance: "Try again later.")
+                        }
+                        
+                        isLoadingStartingData = false
                     }
-                    catch {
-                        errorWrapper = TMSError(error: error, guidance: "Try again later.")
-                    }
-                }
-                .environmentObject(shipmentStore)
-                .environmentObject(carrierStore)
+                    .environmentObject(shipmentStore)
+                    .environmentObject(carrierStore)
+//            }
+
         }
     }
 }

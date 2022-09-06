@@ -17,6 +17,7 @@
 		888FFDA628C69BBA00479139 /* ConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDA528C69BBA00479139 /* ConfigurationHelper.swift */; };
 		888FFDA828C6A29B00479139 /* TMSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDA728C6A29B00479139 /* TMSError.swift */; };
 		888FFDAA28C6A2C200479139 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDA928C6A2C200479139 /* ErrorView.swift */; };
+		888FFDAC28C79BD700479139 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFDAB28C79BD600479139 /* LoadingView.swift */; };
 		88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */; };
 		88A0164328BC56D400111EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164228BC56D400111EA9 /* Assets.xcassets */; };
 		88A0164628BC56D400111EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164528BC56D400111EA9 /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		888FFDA528C69BBA00479139 /* ConfigurationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationHelper.swift; sourceTree = "<group>"; };
 		888FFDA728C6A29B00479139 /* TMSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMSError.swift; sourceTree = "<group>"; };
 		888FFDA928C6A2C200479139 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		888FFDAB28C79BD600479139 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		88A0163B28BC56D200111EA9 /* ios-tms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-tms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tmsApp.swift; sourceTree = "<group>"; };
 		88A0164228BC56D400111EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				88A0166228BC5DF800111EA9 /* Shipments */,
 				88A0165828BC5D7700111EA9 /* CentralView.swift */,
 				888FFDA928C6A2C200479139 /* ErrorView.swift */,
+				888FFDAB28C79BD600479139 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				888FFD9B28C554E900479139 /* QuoteStore.swift in Sources */,
 				88A0165328BC5AA500111EA9 /* Address.swift in Sources */,
 				888FFDAA28C6A2C200479139 /* ErrorView.swift in Sources */,
+				888FFDAC28C79BD700479139 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,7 @@ struct ShipmentRowView: View {
                     
                 Text("$\(shipment.rate.formatted())")
                     .font(.subheadline)
+                    .foregroundColor(shipment.isPaid ? .green : .red)
             }
 
             HStack {

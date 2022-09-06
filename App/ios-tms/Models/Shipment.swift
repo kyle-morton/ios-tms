@@ -18,8 +18,9 @@ struct Shipment: Identifiable, Codable {
     var items: Int
     var weight: Decimal
     var rate: Decimal
+    var isPaid: Bool
     
-    init(id: Int, bol: String, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal) {
+    init(id: Int, bol: String, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal, isPaid: Bool) {
         self.id = id
         self.bol = bol
         self.origin = origin
@@ -28,6 +29,7 @@ struct Shipment: Identifiable, Codable {
         self.items = items
         self.weight = weight
         self.rate = rate
+        self.isPaid = isPaid
     }
     
 //    var originId: Int?
