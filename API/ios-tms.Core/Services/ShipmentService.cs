@@ -1,67 +1,44 @@
 ﻿using System;
+using Bogus;
 using ios_tms.Core.Domain;
+using ios_tms.Core.Helpers;
 using ios_tms.Core.Services.Interfaces;
 
 namespace ios_tms.Core.Services;
 
 public class ShipmentService : IShipmentService
 {
-    private static List<Shipment> _shipments = new List<Shipment>
-    {
-        new Shipment
-        {
-            Id = 1,
-            Bol = "601000123",
-            Origin = "Memphis, TN",
-            Destination = "Little Rock, AR",
-            Carrier = "AAA Cooper - AACT",
-            Items = 5,
-            Weight = 1332,
-            Rate = 242
-        },
-        new Shipment
-        {
-            Id = 2,
-            Bol = "601000155",
-            Origin = "Phoenix, AZ",
-            Destination = "Salt Lake City, UT",
-            Carrier = "PITT Ohio - PITD",
-            Items = 10,
-            Weight = 2321,
-            Rate = 431
-        },
-        new Shipment
-        {
-            Id = 3,
-            Bol = "601000199",
-            Origin = "Kansas City, MO",
-            Destination = "New York City, NY",
-            Carrier = "AAA Cooper - AACT",
-            Items = 2,
-            Weight = 5000,
-            Rate = 1550
-        },
-        new Shipment
-        {
-            Id = 4,
-            Bol = "601000240",
-            Origin = "Little Rock, AR",
-            Destination = "Baltimore, MD",
-            Carrier = "R&L Carriers - RLCA",
-            Items = 10,
-            Weight = 3200,
-            Rate = 642
-        }
-    };
-
+    private static List<Shipment> _shipments;
 
     public ShipmentService()
     {
+        if (_shipments == null)
+        {
+            _shipments = new List<Shipment>();
+
+            var carrierNames = CarrierService.GetCarrierList().Select(c => c.Name).ToList();
+            var shipmentFaker = BogusHelper.GetShipmentConfig();
+
+            Enumerable.Range(1, 5).ToList().ForEach(i =>
+            {
+                _shipments.Add(shipmentFaker.Generate());
+            });
+        }
     }
 
     public List<Shipment> GetShipmentsAsync()
     {
         return _shipments;
+    }
+
+    public Shipment CreateAsync(Shipment shipment)
+    {
+        shipment.Id = BogusHelper.NextShipmentId();
+        shipment.Bol = BogusHelper.NextBOL();
+        shipment.Rate = new Faker().Random.Decimal(100.00m, 2000.00m);
+        _shipments.Add(shipment);
+
+        return shipment;
     }
 }
 

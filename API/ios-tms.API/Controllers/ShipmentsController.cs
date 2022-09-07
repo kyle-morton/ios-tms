@@ -25,7 +25,16 @@ public class ShipmentsController : ControllerBase
             .OrderByDescending(c => c.Bol)
             .ToList();
 
-        return Ok(shipments.Select(ShipmentIndexItemViewModel.From).ToList());
+        var vms = shipments.Select(ShipmentIndexItemViewModel.From).ToList();
+
+        return Ok(vms);
+    }
+
+    [HttpPost]
+    public IActionResult Create(CreateShipmentViewModel viewModel)
+    {
+        var newShipment = _service.CreateAsync(viewModel.ToModel());
+        return Ok(newShipment);
     }
 }
 

@@ -52,5 +52,10 @@ public class CarrierService : ICarrierService
     {
         return _carriers;
     }
+
+    public static List<Carrier> GetCarrierList()
+    {
+        return _carriers;
+    }
 }
 

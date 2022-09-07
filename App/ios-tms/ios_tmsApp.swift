@@ -24,7 +24,7 @@ struct ios_tmsApp: App {
                         do {
                             carrierStore.carriers = try await carrierStore.load()
                             shipmentStore.shipments = try await shipmentStore.load()
-                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
+//                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
                         }
                         catch {
                             errorWrapper = TMSError(error: error, guidance: "Try again later.")

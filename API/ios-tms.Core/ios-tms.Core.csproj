@@ -12,11 +12,13 @@
     <None Remove="Services\" />
     <None Remove="Services\Interfaces\" />
     <None Remove="Bogus" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Interfaces\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
