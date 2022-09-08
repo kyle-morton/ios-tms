@@ -12,7 +12,8 @@ public class ShipmentIndexItemViewModel
     public int Items { get; set; }
     public Decimal Weight { get; set; }
     public Decimal Rate { get; set; }
-    public string RateFormatted { get; set; }
+    public bool IsPaid { get; set; }
+    public string RateFormatted => Rate.ToString("0.00");
 
     public static ShipmentIndexItemViewModel From(Shipment shipment)
     {
@@ -26,7 +27,7 @@ public class ShipmentIndexItemViewModel
             Items = shipment.Items,
             Weight = shipment.Weight,
             Rate = shipment.Rate,
-            RateFormatted = shipment.Rate.ToString("0.00")
+            IsPaid = shipment.IsPaid
         };
     }
 

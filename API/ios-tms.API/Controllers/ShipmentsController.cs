@@ -18,7 +18,7 @@ public class ShipmentsController : ControllerBase
         _service = service;
     }
 
-    [HttpGet]
+    [HttpGet("All")]
     public IActionResult Get()
     {
         var shipments = _service.GetShipmentsAsync()
@@ -30,7 +30,7 @@ public class ShipmentsController : ControllerBase
         return Ok(vms);
     }
 
-    [HttpPost]
+    [HttpPost("Create")]
     public IActionResult Create(CreateShipmentViewModel viewModel)
     {
         var newShipment = _service.CreateAsync(viewModel.ToModel());

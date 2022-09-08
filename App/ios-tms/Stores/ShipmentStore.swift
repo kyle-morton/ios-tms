@@ -14,7 +14,7 @@ class ShipmentStore: ObservableObject {
     
     func load() async throws -> [Shipment] {
         
-        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments")
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments/all")
             else { fatalError("Missing URL") }
         
         print("url: \(url.absoluteURL)")
@@ -24,17 +24,29 @@ class ShipmentStore: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: urlRequest);
     
         guard (response as? HTTPURLResponse)?.statusCode == 200
-            else { fatalError("Error while fetching carriers"); }
+            else { fatalError("Error while fetching shipments"); }
         
         print("response: \(data)");
+        
+        do {
+            let json = try JSONDecoder().decode([Shipment].self, from: data)
+            print(json)
+        } catch {
+            print("JSON error: \(error)")
+        }
         
         let decodedShipments = try JSONDecoder().decode([Shipment].self, from: data);
         print("Async decodedShipments", decodedShipments)
 
         return decodedShipments
     }
+    
     static func loadMore() {
         // get more shipments from the server
+    }
+    
+    func createShipment(shimpent: Shipment) {
+        
     }
     
     init() {
