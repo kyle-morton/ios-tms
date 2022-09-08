@@ -45,8 +45,30 @@ class ShipmentStore: ObservableObject {
         // get more shipments from the server
     }
     
-    func createShipment(shimpent: Shipment) {
+    func createShipment(shipment: Shipment) async throws -> Shipment {
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments/create")
+            else { fatalError("Missing URL") }
         
+        print("url: \(url.absoluteURL)")
+        
+        let jsonData = try JSONEncoder().encode(shipment)
+        
+        var urlRequest = URLRequest(url: url);
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = jsonData
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest);
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+            else { fatalError("Error while creating shipment"); }
+        
+        print("response: \(data)");
+        
+        let decodedShipment = try JSONDecoder().decode(Shipment.self, from: data);
+        print("Async decodedShipment", decodedShipment)
+
+        return decodedShipment
     }
     
     init() {

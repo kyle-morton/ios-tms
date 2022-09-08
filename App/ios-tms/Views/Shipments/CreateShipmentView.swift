@@ -15,12 +15,12 @@ struct CreateShipmentView: View {
 //    @State private var showingGetShipmentRateAlert = false
     @State private var showingConfirmView = false;
     
-    @State private var originCity: String = "";
-    @State private var originState: String = "";
-    @State private var originZipCode: String = "";
-    @State private var destinationCity: String = "";
-    @State private var destinationState: String = "";
-    @State private var destinationZipCode: String = "";
+    @State private var origin: String = "";
+//    @State private var originState: String = "";
+//    @State private var originZipCode: String = "";
+    @State private var destination: String = "";
+//    @State private var destinationState: String = "";
+//    @State private var destinationZipCode: String = "";
     @State private var carrierId = 0;
     @State private var units: Int?;
     @State private var weightInPounds: Int?;
@@ -41,22 +41,22 @@ struct CreateShipmentView: View {
         ]
     }
     
-    func validateShipment() {
-        
-//        return true;
+    func validateShipment() -> Bool {
+        // todo - add validation
+        return true;
     }
     
     var body: some View {
         Form {
             Section(header: Text("Origin")) {
-                TextField("City", text: $originCity)
-                TextField("State", text: $originState)
-                TextField("Zip Code", text: $originZipCode)
+                TextField("Location", text: $origin)
+//                TextField("State", text: $originState)
+//                TextField("Zip Code", text: $originZipCode)
             }
             Section(header: Text("Destination")) {
-                TextField("City", text: $destinationCity)
-                TextField("State", text: $destinationState)
-                TextField("Zip Code", text: $destinationZipCode)
+                TextField("Location", text: $destination)
+//                TextField("State", text: $destinationState)
+//                TextField("Zip Code", text: $destinationZipCode)
             }
             Section(header: Text("Items")) {
                 TextField("Units", value: $units, format: .number)
@@ -71,11 +71,23 @@ struct CreateShipmentView: View {
             }
 
             Button("Get Rate") {
-                showingConfirmView.toggle()
-//                if (!validateShipment()) {
-//                    // display error
-//                }
+//                showingConfirmView.toggle()
+                if (!validateShipment()) {
+                    // display error
+                }
                 
+                var shipmentToCreate = Shipment(origin: origin, destination: destination)
+                
+                Task{
+                    do {
+                        shipmentToCreate = try await shipmentStore.createShipment(shipment: shipmentToCreate)
+                        shipmentStore.shipments = try await shipmentStore.load()
+                    }catch {
+                        print("error: \(error)")
+                    }
+
+                }
+            
                 // go to confirm screen
             }
         }
@@ -87,9 +99,9 @@ struct CreateShipmentView: View {
 //                            .navigationTitle(scrum.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                showingConfirmView = false;
-                            }
+                                Button("Cancel") {
+                                    showingConfirmView = false;
+                                }
                         };
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Confirm") {

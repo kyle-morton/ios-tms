@@ -34,6 +34,19 @@ struct Shipment: Identifiable, Codable {
         self.rateFormatted = "\(self.rate)"
     }
     
+    init(origin: String, destination: String) {
+        self.id = 0
+        self.bol = ""
+        self.origin = origin;
+        self.destination = destination;
+        self.carrier = "CNWY"
+        self.items = 5
+        self.weight = 9999
+        self.rate = 0
+        self.isPaid = false
+        self.rateFormatted = "\(self.rate)"
+    }
+    
 //    var originId: Int?
 //    var destinationId: Int?
 //    var carrierId: Int?
