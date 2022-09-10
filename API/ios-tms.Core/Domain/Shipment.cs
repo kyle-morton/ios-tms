@@ -11,6 +11,7 @@ public class Shipment : EntityBase
     public Decimal Weight { get; set; }
     public Decimal Rate { get; set; }
     public bool IsPaid { get; set; }
+    public ShipmentStatus StatusTypeId { get; set; }
     //public int OriginId { get; set; }
     //public int DestinationId { get; set; }
     //public int CarrierId { get; set; }

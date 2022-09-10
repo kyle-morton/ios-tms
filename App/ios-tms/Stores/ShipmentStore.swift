@@ -11,6 +11,7 @@ import Foundation
 
 class ShipmentStore: ObservableObject {
     @Published var shipments: [Shipment] = [];
+    @Published var openShipmentCount: Int = 0;
     
     func load() async throws -> [Shipment] {
         
@@ -27,14 +28,7 @@ class ShipmentStore: ObservableObject {
             else { fatalError("Error while fetching shipments"); }
         
         print("response: \(data)");
-        
-        do {
-            let json = try JSONDecoder().decode([Shipment].self, from: data)
-            print(json)
-        } catch {
-            print("JSON error: \(error)")
-        }
-        
+
         let decodedShipments = try JSONDecoder().decode([Shipment].self, from: data);
         print("Async decodedShipments", decodedShipments)
 
@@ -43,6 +37,27 @@ class ShipmentStore: ObservableObject {
     
     static func loadMore() {
         // get more shipments from the server
+    }
+    
+    func getOpenShipmentCount() async throws -> Int {
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments/opencount")
+            else { fatalError("Missing URL") }
+        
+        print("url: \(url.absoluteURL)")
+        
+        let urlRequest = URLRequest(url: url);
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest);
+    
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+            else { fatalError("Error while fetching shipment count"); }
+        
+        print("response: \(data)");
+        
+        let decodedCount = try JSONDecoder().decode(Int.self, from: data);
+        print("Async decodedCount", decodedCount)
+
+        return decodedCount
     }
     
     func createShipment(shipment: Shipment) async throws -> Shipment {
@@ -75,18 +90,20 @@ class ShipmentStore: ObservableObject {
         self.shipments = []
     }
     
-    init(shipments: [Shipment]) {
+    init(shipments: [Shipment], openShipmentCount: Int) {
         self.shipments = shipments
+        self.openShipmentCount = openShipmentCount
     }
     
     #if DEBUG
     
     static var example = ShipmentStore(
         shipments: [
-            Shipment(id: 1, bol: "601001",  origin: "Memphis, TN", destination: "Little Rock, AR", carrier: "AACT", items: 5, weight: 10000, rate: 255, isPaid: true),
-            Shipment(id: 2, bol: "601002", origin: "Memphis, TN", destination: "Austin, TX", carrier: "PYLE", items: 2, weight: 2000, rate: 500, isPaid: false),
-            Shipment(id: 3, bol: "601003", origin: "Kansas City, MO", destination: "Brooklyn, NY", carrier: "RLCA", items: 5, weight: 10000, rate: 2400, isPaid: false),
-        ]
+            Shipment(id: 1, bol: "601001",  origin: "Memphis, TN", destination: "Little Rock, AR", carrier: "AACT", items: 5, weight: 10000, rate: 255, isPaid: true, statusTypeId: 2, statusHumanized: "Dispatched"),
+            Shipment(id: 2, bol: "601002", origin: "Memphis, TN", destination: "Austin, TX", carrier: "PYLE", items: 2, weight: 2000, rate: 500, isPaid: false, statusTypeId: 1, statusHumanized: "Pending"),
+            Shipment(id: 3, bol: "601003", origin: "Kansas City, MO", destination: "Brooklyn, NY", carrier: "RLCA", items: 5, weight: 10000, rate: 2400, isPaid: false, statusTypeId: 3, statusHumanized: "In-Transit"),
+        ],
+        openShipmentCount: 3
     )
     
     #endif

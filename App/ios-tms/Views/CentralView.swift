@@ -23,10 +23,13 @@ struct CentralView: View {
                     .tabItem({
                         Label("Shipments", systemImage: "bus")
                     })
+                    .badge(
+                        Text("\(shipmentStore.openShipmentCount)")
+                    )
                 QuotesView()
                     .tabItem({
                         Label("Quotes", systemImage: "dollarsign.circle")
-    //                    badge("5")
+    //                    
                     })
             }
         }

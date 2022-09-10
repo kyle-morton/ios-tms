@@ -13,6 +13,7 @@
     <None Remove="Services\Interfaces\" />
     <None Remove="Bogus" />
     <None Remove="Helpers\" />
+    <None Remove="Humanizer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
@@ -22,5 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
+    <PackageReference Include="Humanizer" Version="2.14.1" />
   </ItemGroup>
 </Project>

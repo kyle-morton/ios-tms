@@ -30,6 +30,14 @@ public class ShipmentsController : ControllerBase
         return Ok(vms);
     }
 
+    [HttpGet("OpenCount")]
+    public IActionResult GetOpenCount()
+    {
+        var count = _service.GetOpenShipmentCountAsync();
+
+        return Ok(count);
+    }
+
     [HttpPost("Create")]
     public IActionResult Create(CreateShipmentViewModel viewModel)
     {

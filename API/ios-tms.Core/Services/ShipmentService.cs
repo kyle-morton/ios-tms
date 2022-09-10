@@ -19,7 +19,7 @@ public class ShipmentService : IShipmentService
             var carrierNames = CarrierService.GetCarrierList().Select(c => c.Name).ToList();
             var shipmentFaker = BogusHelper.GetShipmentConfig();
 
-            Enumerable.Range(1, 5).ToList().ForEach(i =>
+            Enumerable.Range(1, 4).ToList().ForEach(i =>
             {
                 _shipments.Add(shipmentFaker.Generate());
             });
@@ -29,6 +29,19 @@ public class ShipmentService : IShipmentService
     public List<Shipment> GetShipmentsAsync()
     {
         return _shipments;
+    }
+
+    public int GetOpenShipmentCountAsync()
+    {
+        var allowedShipments = new List<ShipmentStatus>
+        {
+            ShipmentStatus.Pending,
+            ShipmentStatus.Dispatched,
+            ShipmentStatus.InTransit
+        };
+
+        return _shipments
+            .Count(s => allowedShipments.Contains(s.StatusTypeId));
     }
 
     public Shipment CreateAsync(Shipment shipment)

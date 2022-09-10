@@ -22,7 +22,8 @@ public class CreateShipmentViewModel
             Destination = Destination,
             Carrier = Carrier,
             Items = Items,
-            Weight = Weight
+            Weight = Weight,
+            StatusTypeId = ShipmentStatus.Pending
         };
     }
 }

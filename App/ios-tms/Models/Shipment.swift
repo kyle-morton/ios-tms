@@ -20,8 +20,10 @@ struct Shipment: Identifiable, Codable {
     var rate: Decimal
     var rateFormatted: String
     var isPaid: Bool
+    var statusTypeId: Int
+    var statusHumanized: String
     
-    init(id: Int, bol: String, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal, isPaid: Bool) {
+    init(id: Int, bol: String, origin: String, destination: String, carrier: String, items: Int, weight: Decimal, rate: Decimal, isPaid: Bool, statusTypeId: Int, statusHumanized: String) {
         self.id = id
         self.bol = bol
         self.origin = origin
@@ -32,6 +34,8 @@ struct Shipment: Identifiable, Codable {
         self.rate = rate
         self.isPaid = isPaid
         self.rateFormatted = "\(self.rate)"
+        self.statusTypeId = statusTypeId
+        self.statusHumanized = statusHumanized
     }
     
     init(origin: String, destination: String) {
@@ -45,6 +49,8 @@ struct Shipment: Identifiable, Codable {
         self.rate = 0
         self.isPaid = false
         self.rateFormatted = "\(self.rate)"
+        self.statusTypeId = 1
+        self.statusHumanized = "Pending"
     }
     
 //    var originId: Int?

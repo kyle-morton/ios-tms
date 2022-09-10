@@ -24,6 +24,7 @@ struct ios_tmsApp: App {
                         do {
                             carrierStore.carriers = try await carrierStore.load()
                             shipmentStore.shipments = try await shipmentStore.load()
+                            shipmentStore.openShipmentCount = try await shipmentStore.getOpenShipmentCount()
 //                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
                         }
                         catch {

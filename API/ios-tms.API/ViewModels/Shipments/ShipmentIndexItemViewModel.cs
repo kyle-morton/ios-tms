@@ -1,4 +1,5 @@
-﻿using ios_tms.Core.Domain;
+﻿using Humanizer;
+using ios_tms.Core.Domain;
 
 namespace ios_tms.API.ViewModels.Shipments;
 
@@ -14,6 +15,8 @@ public class ShipmentIndexItemViewModel
     public Decimal Rate { get; set; }
     public bool IsPaid { get; set; }
     public string RateFormatted => Rate.ToString("0.00");
+    public ShipmentStatus StatusTypeId { get; set; }
+    public string StatusHumanized => StatusTypeId.Humanize();
 
     public static ShipmentIndexItemViewModel From(Shipment shipment)
     {
@@ -27,7 +30,8 @@ public class ShipmentIndexItemViewModel
             Items = shipment.Items,
             Weight = shipment.Weight,
             Rate = shipment.Rate,
-            IsPaid = shipment.IsPaid
+            IsPaid = shipment.IsPaid,
+            StatusTypeId = shipment.StatusTypeId
         };
     }
 

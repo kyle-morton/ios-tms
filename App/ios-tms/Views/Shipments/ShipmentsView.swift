@@ -23,11 +23,12 @@ struct ShipmentsView: View {
                 }
             }
             .toolbar {
-                NavigationLink(destination: CreateShipmentView()) {
-                    Image(systemName: "plus")
+                ToolbarItem(placement: .primaryAction) {
+                    NavigationLink(destination: CreateShipmentView()) {
+                        Image(systemName: "plus")
+                    }
                 }
             }
-        
     }
 }
 

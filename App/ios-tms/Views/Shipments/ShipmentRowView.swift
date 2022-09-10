@@ -22,15 +22,11 @@ struct ShipmentRowView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                
+                Image(systemName: "bus")
+                    .font(.subheadline)
                 Text("\(shipment.bol)")
                     .fontWeight(.bold)
                     .font(.headline)
-                
-                Image(systemName: "bus")
-                    .font(.subheadline)
-                Text("\(shipment.carrier)")
-                    .font(.subheadline)
             }
             HStack {
 //                Image(systemName: "mappin")
@@ -46,8 +42,8 @@ struct ShipmentRowView: View {
                     .font(.caption)
             }
             HStack {
-//                Image(systemName: "banknote")
-//                    .foregroundColor(shipment.isPaid ? .green : .red)
+                Text("\(shipment.carrier)")
+                    .font(.subheadline)
                 Text("$\(shipment.rateFormatted)")
                     .font(.subheadline)
                     .foregroundColor(shipment.isPaid ? .green : .red)
