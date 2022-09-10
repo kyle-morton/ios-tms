@@ -19,7 +19,7 @@ public class ShipmentService : IShipmentService
             var carrierNames = CarrierService.GetCarrierList().Select(c => c.Name).ToList();
             var shipmentFaker = BogusHelper.GetShipmentConfig();
 
-            Enumerable.Range(1, 4).ToList().ForEach(i =>
+            Enumerable.Range(1, 3).ToList().ForEach(i =>
             {
                 _shipments.Add(shipmentFaker.Generate());
             });

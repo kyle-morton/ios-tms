@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct ios_tmsApp: App {
     
-    @StateObject var shipmentStore = ShipmentStore()
-    @StateObject var carrierStore = CarrierStore()
+    @StateObject var shipmentStore = ShipmentStore.example // ShipmentStore()
+    @StateObject var carrierStore = CarrierStore.example // CarrierStore()
     
     @State private var errorWrapper: TMSError?;
     @State private var isLoadingStartingData = true;
@@ -21,16 +21,16 @@ struct ios_tmsApp: App {
 //            LoadingView(isShowing: $isLoadingStartingData) {
                 CentralView()
                     .task {
-                        do {
-                            carrierStore.carriers = try await carrierStore.load()
-                            shipmentStore.shipments = try await shipmentStore.load()
-                            shipmentStore.openShipmentCount = try await shipmentStore.getOpenShipmentCount()
-//                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
-                        }
-                        catch {
-                            errorWrapper = TMSError(error: error, guidance: "Try again later.")
-                        }
-                        
+//                        do {
+//                            carrierStore.carriers = try await carrierStore.load()
+//                            shipmentStore.shipments = try await shipmentStore.load()
+//                            shipmentStore.openShipmentCount = try await shipmentStore.getOpenShipmentCount()
+////                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
+//                        }
+//                        catch {
+//                            errorWrapper = TMSError(error: error, guidance: "Try again later.")
+//                        }
+//
                         isLoadingStartingData = false
                     }
                     .environmentObject(shipmentStore)

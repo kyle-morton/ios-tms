@@ -69,28 +69,28 @@ struct CreateShipmentView: View {
 //                    }
 //                }
 //            }
-
-            Button("Get Rate") {
-//                showingConfirmView.toggle()
-                if (!validateShipment()) {
-                    // display error
-                }
-
-                var shipmentToCreate = Shipment(origin: origin, destination: destination)
-
-                Task{
-                    do {
-                        shipmentToCreate = try await shipmentStore.createShipment(shipment: shipmentToCreate)
-                        shipmentStore.shipments = try await shipmentStore.load()
-                    }catch {
-                        print("error: \(error)")
-                    }
-
-                }
-
-                // go to confirm screen
-            }
-        }
+//
+//            Button("Get Rate") {
+////                showingConfirmView.toggle()
+//                if (!validateShipment()) {
+//                    // display error
+//                }
+//
+//                var shipmentToCreate = Shipment(origin: origin, destination: destination)
+//
+//                Task{
+//                    do {
+//                        shipmentToCreate = try await shipmentStore.createShipment(shipment: shipmentToCreate)
+//                        shipmentStore.shipments = try await shipmentStore.load()
+//                    }catch {
+//                        print("error: \(error)")
+//                    }
+//
+//                }
+//
+//                // go to confirm screen
+//            }
+//        }
         .navigationTitle("New Shipment")
         .navigationBarTitleDisplayMode(.inline)
 //        .sheet(isPresented: $showingConfirmView) {
@@ -112,7 +112,7 @@ struct CreateShipmentView: View {
 //                    };
 //            }
 //
-//        };
+        };
     }
 }
 
