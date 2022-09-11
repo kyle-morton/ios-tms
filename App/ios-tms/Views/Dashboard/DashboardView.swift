@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DashboardView: View {
     var body: some View {
-        Text("Charts would go here...")
+        NavigationView {
+            Text("Charts would go here...")
+        }
     }
 }
 
