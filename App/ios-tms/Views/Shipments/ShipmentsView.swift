@@ -16,6 +16,7 @@ struct ShipmentsView: View {
     @State var showingCreateView = false;
     
     var body: some View {
+        NavigationView {
             List {
                 ForEach(shipmentStore.shipments) { shipment in
                     NavigationLink(destination: ShipmentDetailsView(shipment: shipment)) {
@@ -24,17 +25,14 @@ struct ShipmentsView: View {
                 }
             }
             .navigationBarItems(trailing: Button(action: {
-                //
-                print("Clicked nav button...")
-                showingCreateView = true
-            }) {
-                Image(systemName: "plus")
-            })
-            .sheet(isPresented: $showingCreateView) {
-                NavigationView {
-                    CreateShipmentView()
+                    showingCreateView = true
+                }) {
+                    Image(systemName: "plus")
+                })
+                .sheet(isPresented: $showingCreateView) {
+                    NavigationView {
+                        CreateShipmentView()
                         .navigationTitle("Create Shipment")
-    //                            .navigationTitle(scrum.title)
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction) {
                                     Button("Cancel") {
@@ -42,32 +40,23 @@ struct ShipmentsView: View {
                                     }
                             };
                             ToolbarItem(placement: .confirmationAction) {
-                                Button("Confirm") {
+                                Button("Create") {
                                     showingCreateView = false;
-    //                                        scrum.update(from: data);
                                 }
                             }
                         };
+                    }
+        
                 }
-    
-            };
-//            .toolbar {
-//                ToolbarItem(placement: .primaryAction) {
-//                    NavigationLink(destination: CreateShipmentView()) {
-//                        Image(systemName: "plus")
-//                            .foregroundColor(.blue)
-//                    }
-//                }
-//            }
-    }
+            }
+        }
+
 }
 
 struct ShipmentsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ShipmentsView()
-                .environmentObject(ShipmentStore.example)
-                .environmentObject(CarrierStore.example)
-        }
+        ShipmentsView()
+            .environmentObject(ShipmentStore.example)
+            .environmentObject(CarrierStore.example)
     }
 }

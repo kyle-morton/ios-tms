@@ -9,7 +9,9 @@ import SwiftUI
 
 struct QuotesView: View {
     var body: some View {
-        Text("Quotes...")
+        NavigationView {
+            Text("Quotes...")
+        }
     }
 }
 
