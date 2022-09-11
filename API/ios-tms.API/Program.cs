@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<ICarrierService, CarrierService>();
 builder.Services.AddTransient<IShipmentService, ShipmentService>();
+builder.Services.AddTransient<IQuoteService, QuoteService>();
 
 var app = builder.Build();
 
