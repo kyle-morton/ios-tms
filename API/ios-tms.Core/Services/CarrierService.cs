@@ -1,7 +1,7 @@
-﻿using ios_tms.Core.Domain;
-using ios_tms.Core.Services.Interfaces;
+﻿using iOS_TMS.Core.Domain;
+using iOS_TMS.Core.Services.Interfaces;
 
-namespace ios_tms.Core.Services;
+namespace iOS_TMS.Core.Services;
 
 public class CarrierService : ICarrierService
 {

@@ -28,10 +28,12 @@
     <None Remove="Bogus" />
     <None Remove="ViewModels\Shipments\" />
     <None Remove="Humanizer" />
+    <None Remove="ViewModels\Quotes\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Carriers\" />
     <Folder Include="ViewModels\Shipments\" />
+    <Folder Include="ViewModels\Quotes\" />
   </ItemGroup>
 </Project>

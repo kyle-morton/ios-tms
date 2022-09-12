@@ -1,9 +1,9 @@
 ﻿using Bogus;
-using ios_tms.API.ViewModels.Carriers;
-using ios_tms.Core.Services.Interfaces;
+using iOS_TMS.API.ViewModels.Carriers;
+using iOS_TMS.Core.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ios_tms.API.Controllers;
+namespace iOS_TMS.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]

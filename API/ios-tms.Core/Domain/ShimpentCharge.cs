@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ios_tms.Core.Domain;
+namespace iOS_TMS.Core.Domain;
 
 public class ShimpentCharge : EntityBase
 {

@@ -1,10 +1,10 @@
 ﻿using System;
 using Bogus;
-using ios_tms.Core.Domain;
-using ios_tms.Core.Helpers;
-using ios_tms.Core.Services.Interfaces;
+using iOS_TMS.Core.Domain;
+using iOS_TMS.Core.Helpers;
+using iOS_TMS.Core.Services.Interfaces;
 
-namespace ios_tms.Core.Services;
+namespace iOS_TMS.Core.Services;
 
 public class ShipmentService : IShipmentService
 {
@@ -17,9 +17,9 @@ public class ShipmentService : IShipmentService
             _shipments = new List<Shipment>();
 
             var carrierNames = CarrierService.GetCarrierList().Select(c => c.Name).ToList();
-            var shipmentFaker = BogusHelper.GetShipmentConfig();
+            var shipmentFaker = FakerShipmentHelper.GetConfig();
 
-            Enumerable.Range(1, 3).ToList().ForEach(i =>
+            Enumerable.Range(1, 6).ToList().ForEach(i =>
             {
                 _shipments.Add(shipmentFaker.Generate());
             });
@@ -46,8 +46,8 @@ public class ShipmentService : IShipmentService
 
     public Shipment CreateAsync(Shipment shipment)
     {
-        shipment.Id = BogusHelper.NextShipmentId();
-        shipment.Bol = BogusHelper.NextBOL();
+        shipment.Id = FakerShipmentHelper.NextId();
+        shipment.Bol = FakerShipmentHelper.NextBOL();
         shipment.Rate = new Faker().Random.Decimal(100.00m, 2000.00m);
         _shipments.Add(shipment);
 

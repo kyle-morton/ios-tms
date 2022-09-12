@@ -1,5 +1,5 @@
-﻿using ios_tms.Core.Services;
-using ios_tms.Core.Services.Interfaces;
+﻿using iOS_TMS.Core.Services;
+using iOS_TMS.Core.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

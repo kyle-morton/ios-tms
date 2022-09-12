@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ios_tms.Core.Domain;
+namespace iOS_TMS.Core.Domain;
 
 public class Quote : EntityBase
 {
@@ -7,7 +7,7 @@ public class Quote : EntityBase
     public string Destination { get; set; }
     public int Items { get; set; }
     public decimal Weight { get; set; }
-    public QuoteStatus StatusTypeId { get; set; }
+    public bool IsDeleted { get; set; }
 
     public List<QuoteRate> QuoteRates { get; set; }
 }

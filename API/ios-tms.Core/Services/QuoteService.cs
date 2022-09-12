@@ -1,10 +1,8 @@
-﻿using System;
-using Bogus;
-using ios_tms.Core.Domain;
-using ios_tms.Core.Helpers;
-using ios_tms.Core.Services.Interfaces;
+﻿using ios_tms.Core.Helpers;
+using iOS_TMS.Core.Domain;
+using iOS_TMS.Core.Services.Interfaces;
 
-namespace ios_tms.Core.Services;
+namespace iOS_TMS.Core.Services;
 
 public class QuoteService : IQuoteService
 {
@@ -16,13 +14,12 @@ public class QuoteService : IQuoteService
         {
             _quotes = new List<Quote>();
 
-            var carrierNames = CarrierService.GetCarrierList().Select(c => c.Name).ToList();
-            var shipmentFaker = BogusHelper.GetShipmentConfig();
+            var quoteFaker = FakerQuoteHelper.GetConfig();
 
-            //Enumerable.Range(1, 3).ToList().ForEach(i =>
-            //{
-            //    _quotes.Add(shipmentFaker.Generate());
-            //});
+            Enumerable.Range(1, 6).ToList().ForEach(i =>
+            {
+                _quotes.Add(quoteFaker.Generate());
+            });
         }
     }
 
@@ -31,16 +28,20 @@ public class QuoteService : IQuoteService
         return _quotes;
     }
 
+    public List<QuoteRate> GetQuoteRatesAsync(int quoteId)
+    {
+        var quote = _quotes.FirstOrDefault(q => q.Id == quoteId);
+        if (quote == null)
+        {
+            return null;
+        }
+
+        return quote.QuoteRates;
+    }
+
     public int GetQuotesCountAsync()
     {
-        var allowedStatuses = new List<QuoteStatus>
-        {
-            QuoteStatus.Created,
-            QuoteStatus.Awarded
-        };
-
-        return _quotes
-            .Count(q => allowedStatuses.Contains(q.StatusTypeId));
+        return _quotes.Count;
     }
 
     public Quote CreateAsync(Quote quote)

@@ -1,7 +1,7 @@
 ﻿using Humanizer;
-using ios_tms.Core.Domain;
+using iOS_TMS.Core.Domain;
 
-namespace ios_tms.API.ViewModels.Shipments;
+namespace iOS_TMS.API.ViewModels.Shipments;
 
 public class ShipmentIndexItemViewModel
 {
