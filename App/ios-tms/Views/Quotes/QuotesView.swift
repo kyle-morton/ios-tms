@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct QuotesView: View {
+    
+    @EnvironmentObject var quoteStore: QuoteStore
+    
     var body: some View {
         NavigationView {
+            List {
+                ForEach(quoteStore.quotes) { quote in
+                    
+                }
+            }
             Text("Quotes...")
         }
     }
@@ -18,5 +26,6 @@ struct QuotesView: View {
 struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
         QuotesView()
+            .environmentObject(QuoteStore.example)
     }
 }

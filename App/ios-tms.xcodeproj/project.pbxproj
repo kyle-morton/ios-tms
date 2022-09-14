@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88506D1528D17F6800242B25 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1428D17F6800242B25 /* Quote.swift */; };
+		88506D1728D1867100242B25 /* QuoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1628D1867100242B25 /* QuoteRowView.swift */; };
 		888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9028BF100100479139 /* QuoteDetailsView.swift */; };
 		888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9228BF10C700479139 /* ShipmentRowView.swift */; };
 		888FFD9528C46A4900479139 /* ShipmentCharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9428C46A4900479139 /* ShipmentCharge.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88506D1428D17F6800242B25 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		88506D1628D1867100242B25 /* QuoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRowView.swift; sourceTree = "<group>"; };
 		888FFD9028BF100100479139 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
 		888FFD9228BF10C700479139 /* ShipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentRowView.swift; sourceTree = "<group>"; };
 		888FFD9428C46A4900479139 /* ShipmentCharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentCharge.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				88A0165428BC5CD600111EA9 /* Carrier.swift */,
 				888FFD9428C46A4900479139 /* ShipmentCharge.swift */,
 				888FFDA728C6A29B00479139 /* TMSError.swift */,
+				88506D1428D17F6800242B25 /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			children = (
 				88A0166428BC5E2B00111EA9 /* QuotesView.swift */,
 				888FFD9028BF100100479139 /* QuoteDetailsView.swift */,
+				88506D1628D1867100242B25 /* QuoteRowView.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				888FFDA028C5559000479139 /* TmsStoreProtocol.swift in Sources */,
 				888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */,
 				888FFDA828C6A29B00479139 /* TMSError.swift in Sources */,
+				88506D1528D17F6800242B25 /* Quote.swift in Sources */,
 				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
 				88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */,
 				888FFDA628C69BBA00479139 /* ConfigurationHelper.swift in Sources */,
@@ -287,6 +294,7 @@
 				88A0165328BC5AA500111EA9 /* Address.swift in Sources */,
 				888FFDAA28C6A2C200479139 /* ErrorView.swift in Sources */,
 				888FFDAC28C79BD700479139 /* LoadingView.swift in Sources */,
+				88506D1728D1867100242B25 /* QuoteRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

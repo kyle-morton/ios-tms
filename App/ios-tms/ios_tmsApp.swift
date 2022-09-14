@@ -11,6 +11,7 @@ import SwiftUI
 struct ios_tmsApp: App {
     
     @StateObject var shipmentStore = ShipmentStore()
+    @StateObject var quoteStore = QuoteStore()
     @StateObject var carrierStore = CarrierStore()
     
     @State private var errorWrapper: TMSError?;

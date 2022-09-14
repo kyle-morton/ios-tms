@@ -11,6 +11,7 @@ struct CentralView: View {
     
     @EnvironmentObject var shipmentStore: ShipmentStore
     @EnvironmentObject var carrierStore: CarrierStore
+    @EnvironmentObject var quoteStore: QuoteStore
     
     var body: some View {
         TabView {
@@ -40,5 +41,6 @@ struct CentralView_Previews: PreviewProvider {
         CentralView()
             .environmentObject(ShipmentStore.example)
             .environmentObject(CarrierStore.example)
+            .environmentObject(QuoteStore.example)
     }
 }

@@ -21,7 +21,7 @@ public class FakerQuoteHelper
                 .RuleFor(s => s.Items, f => f.Random.Number(1, 10))
                 .RuleFor(s => s.Weight, f => f.Random.Number(500, 10000))
                 .RuleFor(s => s.IsDeleted, f => f.Random.Bool())
-                .RuleFor(s => s.QuoteRates, f => GetRateConfig().Generate(f.Random.Int(1, 5)));
+                .RuleFor(s => s.QuoteRates, f => GetRateConfig().Generate(f.Random.Int(1, 8)));
     }
 
     public static Faker<QuoteRate> GetRateConfig(int quoteId = 0)
