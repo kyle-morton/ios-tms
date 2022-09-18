@@ -11,6 +11,8 @@ struct QuotesView: View {
     
     @EnvironmentObject var quoteStore: QuoteStore
     
+    @State var showingCreateView = false;
+    
     var body: some View {
         NavigationView {
             List {
@@ -20,7 +22,31 @@ struct QuotesView: View {
                     }
                 }
             }
-            Text("Quotes...")
+            .navigationBarItems(trailing: Button(action: {
+                    showingCreateView = true
+                }) {
+                    Image(systemName: "plus")
+                })
+                .sheet(isPresented: $showingCreateView) {
+                    NavigationView {
+                        CreateQuoteView()
+                        .navigationTitle("Create Quote")
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                    Button("Cancel") {
+                                        showingCreateView = false;
+                                    }
+                            };
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Create") {
+                                    showingCreateView = false;
+                                }
+                            }
+                        };
+                    }
+        
+                }
+            
         }
     }
 }

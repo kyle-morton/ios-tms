@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct QuoteDetailsView: View {
-    let quote: Quote
+    let quote: QuoteIndexItemViewModel
+    let quoteDetails: QuoteDetailsViewModel
     
     var body: some View {
         Text("Quote: \(quote.id)")
+            
+        
     }
 }
 

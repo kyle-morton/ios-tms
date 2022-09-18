@@ -28,6 +28,11 @@ public class QuoteService : IQuoteService
         return _quotes;
     }
 
+    public Quote GetDetailsAsync(int quoteId)
+    {
+        return _quotes.FirstOrDefault(q => q.Id == quoteId);
+    }
+
     public List<QuoteRate> GetQuoteRatesAsync(int quoteId)
     {
         var quote = _quotes.FirstOrDefault(q => q.Id == quoteId);

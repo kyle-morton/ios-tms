@@ -38,6 +38,19 @@ public class QuotesController : ControllerBase
         return Ok(count);
     }
 
+    [HttpGet("Details")]
+    public IActionResult GetDetails(int quoteId)
+    {
+        var quote = _service.GetDetailsAsync(quoteId);
+
+        if (quote == null)
+        {
+            return NotFound();
+        }
+
+        return Ok();
+    }
+
     [HttpGet("Rates")]
     public IActionResult GetRates(int quoteId)
     {

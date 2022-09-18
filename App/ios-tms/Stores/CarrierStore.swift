@@ -8,9 +8,9 @@
 import Foundation
 
 class CarrierStore: ObservableObject {
-    @Published var carriers: [Carrier] = [];
+    @Published var carriers: [CarrierOption] = [];
     
-    func load() async throws -> [Carrier] {
+    func load() async throws -> [CarrierOption] {
         
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/carriers")
             else { fatalError("Missing URL") }
@@ -26,7 +26,7 @@ class CarrierStore: ObservableObject {
         
 //        print("response: \(data)");
         
-        let decodedCarriers = try JSONDecoder().decode([Carrier].self, from: data);
+        let decodedCarriers = try JSONDecoder().decode([CarrierOption].self, from: data);
 //        print("Async decodedCarriers", decodedCarriers)
 
         return decodedCarriers
@@ -40,7 +40,7 @@ class CarrierStore: ObservableObject {
         self.carriers = []
     }
     
-    init(carriers: [Carrier]) {
+    init(carriers: [CarrierOption]) {
         self.carriers = carriers
     }
     
@@ -48,10 +48,10 @@ class CarrierStore: ObservableObject {
     
     static var example = CarrierStore(
         carriers: [
-            Carrier(id: 1, name: "AAA Cooper", scac: "AACT"),
-            Carrier(id: 2, name: "R&L Carriers", scac: "RLCA"),
-            Carrier(id: 3, name: "Pitt Ohio", scac: "PITT"),
-            Carrier(id: 4, name: "FedEx", scac: "FXFE")
+            CarrierOption(id: 1, name: "AAA Cooper", scac: "AACT"),
+            CarrierOption(id: 2, name: "R&L Carriers", scac: "RLCA"),
+            CarrierOption(id: 3, name: "Pitt Ohio", scac: "PITT"),
+            CarrierOption(id: 4, name: "FedEx", scac: "FXFE")
         ]
     )
     

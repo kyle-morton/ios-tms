@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuoteRowView: View {
-    let quote: Quote
+    let quote: QuoteIndexItemViewModel
     
     var body: some View {
         VStack(alignment: .leading) {

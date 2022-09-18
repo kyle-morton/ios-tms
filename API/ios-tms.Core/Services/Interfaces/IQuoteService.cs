@@ -8,5 +8,6 @@ public interface IQuoteService
     List<QuoteRate> GetQuoteRatesAsync(int quoteId);
     int GetQuotesCountAsync();
     Quote CreateAsync(Quote quote);
+    Quote GetDetailsAsync(int quoteId);
 }
 

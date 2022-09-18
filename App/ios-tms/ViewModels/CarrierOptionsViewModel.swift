@@ -1,13 +1,13 @@
 //
-//  Carrier.swift
+//  CarrierOptionsViewModel.swift
 //  ios-tms
 //
-//  Created by Kyle Morton on 8/28/22.
+//  Created by Kyle Morton on 9/18/22.
 //
 
 import Foundation
 
-struct Carrier: Identifiable, Hashable, Codable {
+struct CarrierOption: Identifiable, Hashable, Codable {
     var id: Int
     var name: String
     var scac: String
