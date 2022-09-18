@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShipmentDetailsView: View {
     
-    let shipment: Shipment
+    let shipment: ShipmentIndexItemViewModel
     
     var body: some View {
         

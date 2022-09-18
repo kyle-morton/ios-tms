@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88506D1528D17F6800242B25 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1428D17F6800242B25 /* Quote.swift */; };
 		88506D1728D1867100242B25 /* QuoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1628D1867100242B25 /* QuoteRowView.swift */; };
+		88506D1C28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1B28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift */; };
+		88506D1E28D6D14400242B25 /* ShipmentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1D28D6D14400242B25 /* ShipmentDetailsViewModel.swift */; };
+		88506D2028D6D1DD00242B25 /* CreateShipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1F28D6D1DD00242B25 /* CreateShipmentViewModel.swift */; };
+		88506D2228D6D44900242B25 /* QuoteIndexItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2128D6D44900242B25 /* QuoteIndexItemViewModel.swift */; };
+		88506D2428D6D45400242B25 /* QuoteDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2328D6D45400242B25 /* QuoteDetailsViewModel.swift */; };
+		88506D2628D6D7F700242B25 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2528D6D7F700242B25 /* AddressViewModel.swift */; };
+		88506D2828D6D82C00242B25 /* QuoteRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2728D6D82C00242B25 /* QuoteRateViewModel.swift */; };
 		888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9028BF100100479139 /* QuoteDetailsView.swift */; };
 		888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9228BF10C700479139 /* ShipmentRowView.swift */; };
-		888FFD9528C46A4900479139 /* ShipmentCharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9428C46A4900479139 /* ShipmentCharge.swift */; };
 		888FFD9728C5544200479139 /* ConfirmShipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9628C5544200479139 /* ConfirmShipmentView.swift */; };
 		888FFD9928C554E000479139 /* CarrierStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9828C554E000479139 /* CarrierStore.swift */; };
 		888FFD9B28C554E900479139 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9A28C554E900479139 /* QuoteStore.swift */; };
@@ -23,9 +28,6 @@
 		88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */; };
 		88A0164328BC56D400111EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164228BC56D400111EA9 /* Assets.xcassets */; };
 		88A0164628BC56D400111EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A0164528BC56D400111EA9 /* Preview Assets.xcassets */; };
-		88A0164F28BC5A8C00111EA9 /* Shipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0164E28BC5A8C00111EA9 /* Shipment.swift */; };
-		88A0165128BC5A9600111EA9 /* ShipmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165028BC5A9600111EA9 /* ShipmentItem.swift */; };
-		88A0165328BC5AA500111EA9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165228BC5AA500111EA9 /* Address.swift */; };
 		88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165428BC5CD600111EA9 /* Carrier.swift */; };
 		88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165828BC5D7700111EA9 /* CentralView.swift */; };
 		88A0165B28BC5D9C00111EA9 /* ShipmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */; };
@@ -37,11 +39,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		88506D1428D17F6800242B25 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		88506D1628D1867100242B25 /* QuoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRowView.swift; sourceTree = "<group>"; };
+		88506D1B28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentIndexItemViewModel.swift; sourceTree = "<group>"; };
+		88506D1D28D6D14400242B25 /* ShipmentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentDetailsViewModel.swift; sourceTree = "<group>"; };
+		88506D1F28D6D1DD00242B25 /* CreateShipmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShipmentViewModel.swift; sourceTree = "<group>"; };
+		88506D2128D6D44900242B25 /* QuoteIndexItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteIndexItemViewModel.swift; sourceTree = "<group>"; };
+		88506D2328D6D45400242B25 /* QuoteDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsViewModel.swift; sourceTree = "<group>"; };
+		88506D2528D6D7F700242B25 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		88506D2728D6D82C00242B25 /* QuoteRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRateViewModel.swift; sourceTree = "<group>"; };
 		888FFD9028BF100100479139 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
 		888FFD9228BF10C700479139 /* ShipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentRowView.swift; sourceTree = "<group>"; };
-		888FFD9428C46A4900479139 /* ShipmentCharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentCharge.swift; sourceTree = "<group>"; };
 		888FFD9628C5544200479139 /* ConfirmShipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmShipmentView.swift; sourceTree = "<group>"; };
 		888FFD9828C554E000479139 /* CarrierStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierStore.swift; sourceTree = "<group>"; };
 		888FFD9A28C554E900479139 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
@@ -54,9 +61,6 @@
 		88A0163E28BC56D200111EA9 /* ios_tmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tmsApp.swift; sourceTree = "<group>"; };
 		88A0164228BC56D400111EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88A0164528BC56D400111EA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		88A0164E28BC5A8C00111EA9 /* Shipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shipment.swift; sourceTree = "<group>"; };
-		88A0165028BC5A9600111EA9 /* ShipmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentItem.swift; sourceTree = "<group>"; };
-		88A0165228BC5AA500111EA9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		88A0165428BC5CD600111EA9 /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
 		88A0165828BC5D7700111EA9 /* CentralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralView.swift; sourceTree = "<group>"; };
 		88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentsView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88506D1828D6D0B700242B25 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				88506D1A28D6D0D600242B25 /* Quotes */,
+				88506D1928D6D0CF00242B25 /* Shipments */,
+				88506D2528D6D7F700242B25 /* AddressViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		88506D1928D6D0CF00242B25 /* Shipments */ = {
+			isa = PBXGroup;
+			children = (
+				88506D1B28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift */,
+				88506D1D28D6D14400242B25 /* ShipmentDetailsViewModel.swift */,
+				88506D1F28D6D1DD00242B25 /* CreateShipmentViewModel.swift */,
+			);
+			path = Shipments;
+			sourceTree = "<group>";
+		};
+		88506D1A28D6D0D600242B25 /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				88506D2128D6D44900242B25 /* QuoteIndexItemViewModel.swift */,
+				88506D2328D6D45400242B25 /* QuoteDetailsViewModel.swift */,
+				88506D2728D6D82C00242B25 /* QuoteRateViewModel.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
 		888FFD9E28C5557B00479139 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +147,7 @@
 		88A0163D28BC56D200111EA9 /* ios-tms */ = {
 			isa = PBXGroup;
 			children = (
+				88506D1828D6D0B700242B25 /* ViewModels */,
 				888FFDA428C69BB200479139 /* Helpers */,
 				88A0166F28BDB43400111EA9 /* Stores */,
 				88A0164D28BC5A8200111EA9 /* Models */,
@@ -148,13 +183,8 @@
 		88A0164D28BC5A8200111EA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88A0164E28BC5A8C00111EA9 /* Shipment.swift */,
-				88A0165028BC5A9600111EA9 /* ShipmentItem.swift */,
-				88A0165228BC5AA500111EA9 /* Address.swift */,
 				88A0165428BC5CD600111EA9 /* Carrier.swift */,
-				888FFD9428C46A4900479139 /* ShipmentCharge.swift */,
 				888FFDA728C6A29B00479139 /* TMSError.swift */,
-				88506D1428D17F6800242B25 /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,26 +302,28 @@
 			files = (
 				88A0165F28BC5DC100111EA9 /* CreateShipmentView.swift in Sources */,
 				888FFDA028C5559000479139 /* TmsStoreProtocol.swift in Sources */,
+				88506D2628D6D7F700242B25 /* AddressViewModel.swift in Sources */,
 				888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */,
 				888FFDA828C6A29B00479139 /* TMSError.swift in Sources */,
-				88506D1528D17F6800242B25 /* Quote.swift in Sources */,
 				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
+				88506D1E28D6D14400242B25 /* ShipmentDetailsViewModel.swift in Sources */,
 				88A0165528BC5CD600111EA9 /* Carrier.swift in Sources */,
 				888FFDA628C69BBA00479139 /* ConfigurationHelper.swift in Sources */,
+				88506D2228D6D44900242B25 /* QuoteIndexItemViewModel.swift in Sources */,
 				88A0165928BC5D7700111EA9 /* CentralView.swift in Sources */,
 				888FFD9928C554E000479139 /* CarrierStore.swift in Sources */,
 				888FFD9728C5544200479139 /* ConfirmShipmentView.swift in Sources */,
-				888FFD9528C46A4900479139 /* ShipmentCharge.swift in Sources */,
 				888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */,
-				88A0165128BC5A9600111EA9 /* ShipmentItem.swift in Sources */,
+				88506D2028D6D1DD00242B25 /* CreateShipmentViewModel.swift in Sources */,
+				88506D1C28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift in Sources */,
 				88A0165B28BC5D9C00111EA9 /* ShipmentsView.swift in Sources */,
+				88506D2428D6D45400242B25 /* QuoteDetailsViewModel.swift in Sources */,
 				88A0167128BDB43D00111EA9 /* ShipmentStore.swift in Sources */,
 				88A0166828BC613800111EA9 /* DashboardView.swift in Sources */,
 				88A0166528BC5E2B00111EA9 /* QuotesView.swift in Sources */,
 				88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */,
-				88A0164F28BC5A8C00111EA9 /* Shipment.swift in Sources */,
+				88506D2828D6D82C00242B25 /* QuoteRateViewModel.swift in Sources */,
 				888FFD9B28C554E900479139 /* QuoteStore.swift in Sources */,
-				88A0165328BC5AA500111EA9 /* Address.swift in Sources */,
 				888FFDAA28C6A2C200479139 /* ErrorView.swift in Sources */,
 				888FFDAC28C79BD700479139 /* LoadingView.swift in Sources */,
 				88506D1728D1867100242B25 /* QuoteRowView.swift in Sources */,

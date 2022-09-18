@@ -1,13 +1,13 @@
 //
-//  Address.swift
+//  AddressViewModel.swift
 //  ios-tms
 //
-//  Created by Kyle Morton on 8/28/22.
+//  Created by Kyle Morton on 9/17/22.
 //
 
 import Foundation
 
-struct Address: Codable, Identifiable {
+struct AddressViewModel: Codable, Identifiable {
     var id: Int
     var addressLineOne: String
     var addressLineTwo: String

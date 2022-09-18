@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShipmentRowView: View {
-    let shipment: Shipment
+    let shipment: ShipmentIndexItemViewModel
     
     var body: some View {
         VStack(alignment: .leading) {

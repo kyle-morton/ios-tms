@@ -1,13 +1,13 @@
 //
-//  Shipment.swift
+//  ShipmentIndexItemViewModel.swift
 //  ios-tms
 //
-//  Created by Kyle Morton on 8/28/22.
+//  Created by Kyle Morton on 9/17/22.
 //
 
 import Foundation
 
-struct Shipment: Identifiable, Codable {
+struct ShipmentIndexItemViewModel: Identifiable, Codable {
     
     // simplifing model to the below (for now)
     var id: Int

@@ -1,13 +1,13 @@
 //
-//  Quote.swift
+//  QuoteIndexItemViewModel.swift
 //  ios-tms
 //
-//  Created by Kyle Morton on 9/13/22.
+//  Created by Kyle Morton on 9/17/22.
 //
 
 import Foundation
 
-struct Quote : Identifiable, Codable {
+struct QuoteIndexItemViewModel : Identifiable, Codable {
 
     var id: Int
     var origin: String

@@ -30,6 +30,14 @@ public class QuotesController : ControllerBase
         return Ok(vms);
     }
 
+    [HttpGet("Count")]
+    public IActionResult GetOpenCount()
+    {
+        var count = _service.GetQuotesCountAsync();
+
+        return Ok(count);
+    }
+
     [HttpGet("Rates")]
     public IActionResult GetRates(int quoteId)
     {

@@ -10,10 +10,10 @@ import Foundation
 // Store == Service
 
 class ShipmentStore: ObservableObject {
-    @Published var shipments: [Shipment] = [];
+    @Published var shipments: [ShipmentIndexItemViewModel] = [];
     @Published var openShipmentCount: Int = 0;
     
-    func load() async throws -> [Shipment] {
+    func load() async throws -> [ShipmentIndexItemViewModel] {
         
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments/all")
             else { fatalError("Missing URL") }
@@ -28,14 +28,8 @@ class ShipmentStore: ObservableObject {
             else { fatalError("Error while fetching shipments"); }
         
         print("response: \(data)");
-        
-        do {
-            let test = try JSONDecoder().decode([Shipment].self, from: data);
-        } catch {
-            print("Error: \(error)")
-        }
-
-        let decodedShipments = try JSONDecoder().decode([Shipment].self, from: data);
+    
+        let decodedShipments = try JSONDecoder().decode([ShipmentIndexItemViewModel].self, from: data);
         print("Async decodedShipments", decodedShipments)
 
         return decodedShipments
@@ -66,7 +60,7 @@ class ShipmentStore: ObservableObject {
         return decodedCount
     }
     
-    func createShipment(shipment: Shipment) async throws -> Shipment {
+    func createShipment(shipment: CreateShipmentViewModel) async throws -> ShipmentDetailsViewModel {
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/shipments/create")
             else { fatalError("Missing URL") }
         
@@ -86,7 +80,7 @@ class ShipmentStore: ObservableObject {
         
         print("response: \(data)");
         
-        let decodedShipment = try JSONDecoder().decode(Shipment.self, from: data);
+        let decodedShipment = try JSONDecoder().decode(ShipmentDetailsViewModel.self, from: data);
         print("Async decodedShipment", decodedShipment)
 
         return decodedShipment
@@ -96,7 +90,7 @@ class ShipmentStore: ObservableObject {
         self.shipments = []
     }
     
-    init(shipments: [Shipment], openShipmentCount: Int) {
+    init(shipments: [ShipmentIndexItemViewModel], openShipmentCount: Int) {
         self.shipments = shipments
         self.openShipmentCount = openShipmentCount
     }
@@ -105,9 +99,9 @@ class ShipmentStore: ObservableObject {
     
     static var example = ShipmentStore(
         shipments: [
-            Shipment(id: 1, bol: "601001",  origin: "Memphis, TN", destination: "Little Rock, AR", carrier: "AACT", items: 5, weight: 10000, rate: 255, isPaid: true, statusTypeId: 2, statusHumanized: "Dispatched"),
-            Shipment(id: 2, bol: "601002", origin: "Memphis, TN", destination: "Austin, TX", carrier: "PYLE", items: 2, weight: 2000, rate: 500, isPaid: false, statusTypeId: 1, statusHumanized: "Pending"),
-            Shipment(id: 3, bol: "601003", origin: "Kansas City, MO", destination: "Brooklyn, NY", carrier: "RLCA", items: 5, weight: 10000, rate: 2400, isPaid: false, statusTypeId: 3, statusHumanized: "In-Transit"),
+            ShipmentIndexItemViewModel(id: 1, bol: "601001",  origin: "Memphis, TN", destination: "Little Rock, AR", carrier: "AACT", items: 5, weight: 10000, rate: 255, isPaid: true, statusTypeId: 2, statusHumanized: "Dispatched"),
+            ShipmentIndexItemViewModel(id: 2, bol: "601002", origin: "Memphis, TN", destination: "Austin, TX", carrier: "PYLE", items: 2, weight: 2000, rate: 500, isPaid: false, statusTypeId: 1, statusHumanized: "Pending"),
+            ShipmentIndexItemViewModel(id: 3, bol: "601003", origin: "Kansas City, MO", destination: "Brooklyn, NY", carrier: "RLCA", items: 5, weight: 10000, rate: 2400, isPaid: false, statusTypeId: 3, statusHumanized: "In-Transit"),
         ],
         openShipmentCount: 3
     )
