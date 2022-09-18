@@ -9,17 +9,34 @@ import SwiftUI
 
 struct QuoteDetailsView: View {
     let quote: QuoteIndexItemViewModel
-    let quoteDetails: QuoteDetailsViewModel
+    
+    @State var quoteDetails = QuoteDetailsViewModel()
     
     var body: some View {
-        Text("Quote: \(quote.id)")
-            
-        
+        VStack {
+            if quoteDetails.id > 0 {
+                Text("Quote: \(quoteDetails.id)")
+                Text("Rates Details: \(quoteDetails.rates.count)")
+            }
+        }
+        .navigationTitle("Quote: \(quote.id)")
+        .onAppear() {
+            self.quoteDetails = QuoteDetailsViewModel(vm: self.quote)
+        }
+        .task {
+            do {
+                quoteDetails = try await QuoteStore.getDetails(id: quote.id)
+            }catch {
+                print("Unable to pull details \(error)")
+            }
+        }
     }
 }
 
 struct QuoteDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteDetailsView(quote: QuoteStore.example.quotes[0])
+        QuoteDetailsView(
+            quote: QuoteStore.example.quotes[0]
+        )
     }
 }

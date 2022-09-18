@@ -27,5 +27,25 @@ struct QuoteDetailsViewModel : Identifiable, Codable {
         self.rates = rates
     }
     
+    init(vm: QuoteIndexItemViewModel) {
+        self.id = vm.id
+        self.origin = vm.origin
+        self.destination = vm.destination
+        self.items = vm.items
+        self.weight = vm.weight
+        self.weightFormatted = vm.weightFormatted
+        self.rates = []
+    }
+    
+    init() {
+        self.id = 0
+        self.origin = ""
+        self.destination = ""
+        self.items = 0
+        self.weight = 0
+        self.weightFormatted = ""
+        self.rates = []
+    }
+    
 }
 

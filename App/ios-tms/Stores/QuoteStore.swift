@@ -8,7 +8,7 @@
 import Foundation
 
 class QuoteStore: ObservableObject {
-    @Published var quotes: [QuoteIndexItemViewModel] = [];
+    @Published var quotes: [QuoteIndexItemViewModel]
     @Published var quoteCount: Int = 0;
     
     func load() async throws -> [QuoteIndexItemViewModel] {
@@ -33,7 +33,27 @@ class QuoteStore: ObservableObject {
         return decodedQuotes
     }
     
-//    func details(id: Int) async throws
+    static func getDetails(id: Int) async throws -> QuoteDetailsViewModel {
+        
+        #if DEBUG
+            return QuoteStore.exampleDetails
+        #endif
+        
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/details?quoteId=\(id)")
+            else { fatalError("Missing URL") }
+        
+        let (data, response) = try await URLSession.shared.data(for: URLRequest(url: url));
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+            else { fatalError("Error while fetching quotes"); }
+        
+        print("response: \(data)");
+        
+        let decodedQuote = try JSONDecoder().decode(QuoteDetailsViewModel.self, from: data);
+        print("Async decodedQuote", decodedQuote)
+
+        return decodedQuote
+    }
     
     init() {
         self.quotes = []
@@ -54,7 +74,16 @@ class QuoteStore: ObservableObject {
         ],
         quoteCount: 3
     )
-
+    
+    static var exampleDetails = QuoteDetailsViewModel(id: 1, origin: "Memphis, TN", destination: "Little Rock, AR", items: 5, weight: 10000, rates: [
+            QuoteRateViewModel(id: 1, quoteId: 1, carrier: "AAA Cooper", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
+            QuoteRateViewModel(id: 2, quoteId: 1, carrier: "FedEx", rate: 500.32, rateFormatted: "500.32", cost: 400.00, costFormatted: "400.00"),
+            QuoteRateViewModel(id: 3, quoteId: 1, carrier: "R&L Carriers", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
+            QuoteRateViewModel(id: 4, quoteId: 1, carrier: "Pitt Ohio", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
+            QuoteRateViewModel(id: 5, quoteId: 1, carrier: "AAA Cooper", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
+        ]
+    )
+    
     #endif
 
 }
