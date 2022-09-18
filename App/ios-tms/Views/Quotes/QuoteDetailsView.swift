@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct QuoteDetailsView: View {
+    let quote: Quote
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Quote: \(quote.id)")
     }
 }
 
 struct QuoteDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteDetailsView()
+        QuoteDetailsView(quote: QuoteStore.example.quotes[0])
     }
 }

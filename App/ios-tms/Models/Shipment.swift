@@ -17,6 +17,7 @@ struct Shipment: Identifiable, Codable {
     var carrier: String
     var items: Int
     var weight: Decimal
+    var weightFormatted: String
     var rate: Decimal
     var rateFormatted: String
     var isPaid: Bool
@@ -36,6 +37,7 @@ struct Shipment: Identifiable, Codable {
         self.rateFormatted = "\(self.rate)"
         self.statusTypeId = statusTypeId
         self.statusHumanized = statusHumanized
+        self.weightFormatted = "\(weight)"
     }
     
     init(origin: String, destination: String) {
@@ -46,6 +48,7 @@ struct Shipment: Identifiable, Codable {
         self.carrier = "CNWY"
         self.items = 5
         self.weight = 9999
+        self.weightFormatted = "\(9999)"
         self.rate = 0
         self.isPaid = false
         self.rateFormatted = "\(self.rate)"

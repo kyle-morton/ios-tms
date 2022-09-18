@@ -26,6 +26,7 @@ struct ios_tmsApp: App {
                             carrierStore.carriers = try await carrierStore.load()
                             shipmentStore.shipments = try await shipmentStore.load()
                             shipmentStore.openShipmentCount = try await shipmentStore.getOpenShipmentCount()
+                            quoteStore.quotes = try await quoteStore.load()
 //                            try await Task.sleep(nanoseconds: 1_000_000_000) // sleep 1 sec
                         }
                         catch {
@@ -36,6 +37,7 @@ struct ios_tmsApp: App {
                     }
                     .environmentObject(shipmentStore)
                     .environmentObject(carrierStore)
+                    .environmentObject(quoteStore)
 //            }
 
         }

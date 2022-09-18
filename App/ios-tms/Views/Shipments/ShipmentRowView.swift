@@ -10,19 +10,10 @@ import SwiftUI
 struct ShipmentRowView: View {
     let shipment: Shipment
     
-    func formattedWeight() -> String {
-        
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 0
-        
-        return formatter.string(for: shipment.weight) ?? "0"
-    }
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "bus")
+                Image(systemName: "bus.fill")
                     .font(.subheadline)
                 Text("\(shipment.bol)")
                     .fontWeight(.bold)
@@ -38,7 +29,7 @@ struct ShipmentRowView: View {
                     .font(.caption)
             }
             HStack {
-                Text("\(shipment.items) pallets, \(formattedWeight())lbs")
+                Text("\(shipment.items) pallets, \(shipment.weightFormatted)lbs")
                     .font(.caption)
             }
             HStack {
@@ -50,7 +41,6 @@ struct ShipmentRowView: View {
             }
 
         }
-        .padding()
         
     }
 }

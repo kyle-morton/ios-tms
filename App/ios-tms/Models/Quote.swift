@@ -14,6 +14,7 @@ struct Quote : Identifiable, Codable {
     var destination: String
     var items: Int
     var weight: Decimal
+    var weightFormatted: String
     var lowestRate: Decimal
     var lowestRateFormatted: String
     var highestRate: Decimal
@@ -31,6 +32,7 @@ struct Quote : Identifiable, Codable {
         self.highestRate = highestRate
         self.highestRateFormatted = highestRateFormatted
         self.rateCount = rateCount
+        self.weightFormatted = "\(weight)"
     }
     
 }

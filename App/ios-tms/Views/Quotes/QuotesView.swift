@@ -15,7 +15,9 @@ struct QuotesView: View {
         NavigationView {
             List {
                 ForEach(quoteStore.quotes) { quote in
-                    
+                    NavigationLink(destination: QuoteDetailsView(quote: quote)) {
+                        QuoteRowView(quote: quote)
+                    }
                 }
             }
             Text("Quotes...")

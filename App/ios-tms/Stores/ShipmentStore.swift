@@ -28,6 +28,12 @@ class ShipmentStore: ObservableObject {
             else { fatalError("Error while fetching shipments"); }
         
         print("response: \(data)");
+        
+        do {
+            let test = try JSONDecoder().decode([Shipment].self, from: data);
+        } catch {
+            print("Error: \(error)")
+        }
 
         let decodedShipments = try JSONDecoder().decode([Shipment].self, from: data);
         print("Async decodedShipments", decodedShipments)

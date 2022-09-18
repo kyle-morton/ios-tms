@@ -11,6 +11,28 @@ class QuoteStore: ObservableObject {
     @Published var quotes: [Quote] = [];
     @Published var quoteCount: Int = 0;
     
+    func load() async throws -> [Quote] {
+        
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/all")
+            else { fatalError("Missing URL") }
+        
+        print("url: \(url.absoluteURL)")
+        
+        let urlRequest = URLRequest(url: url);
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest);
+    
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+            else { fatalError("Error while fetching quotes"); }
+        
+        print("response: \(data)");
+
+        let decodedQuotes = try JSONDecoder().decode([Quote].self, from: data);
+        print("Async decodedQuotes", decodedQuotes)
+
+        return decodedQuotes
+    }
+    
     init() {
         self.quotes = []
     }

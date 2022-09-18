@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct QuoteRowView: View {
+    let quote: Quote
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "doc.plaintext")
+                    .font(.subheadline)
+                Text("Quote \(quote.id)")
+                    .fontWeight(.bold)
+                    .font(.headline)
+            }
+            HStack {
+//                Image(systemName: "mappin")
+                Text("\(quote.origin)")
+                    .font(.caption)
+                Text(" > ")
+                    .font(.caption)
+                Text("\(quote.destination)")
+                    .font(.caption)
+            }
+            HStack {
+                Text("\(quote.items) pallets, \(quote.weightFormatted)lbs")
+                    .font(.caption)
+            }
+            HStack {
+                Text("$\(quote.lowestRateFormatted) - $\(quote.highestRateFormatted)")
+                    .font(.subheadline)
+            }
+        }
     }
 }
 
-struct QuoteRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuoteRowView()
+    struct QuoteRowView_Previews: PreviewProvider {
+        static var previews: some View {
+            QuoteRowView(quote: QuoteStore.example.quotes[0])
+        }
     }
-}

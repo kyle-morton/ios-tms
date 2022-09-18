@@ -12,9 +12,10 @@ public class ShipmentIndexItemViewModel
     public string Carrier { get; set; }
     public int Items { get; set; }
     public Decimal Weight { get; set; }
+    public string WeightFormatted => Weight.ToString("0.00");
     public Decimal Rate { get; set; }
-    public bool IsPaid { get; set; }
     public string RateFormatted => Rate.ToString("0.00");
+    public bool IsPaid { get; set; }
     public ShipmentStatus StatusTypeId { get; set; }
     public string StatusHumanized => StatusTypeId.Humanize();
 

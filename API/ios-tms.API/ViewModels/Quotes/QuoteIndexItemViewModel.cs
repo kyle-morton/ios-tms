@@ -10,6 +10,7 @@ public class QuoteIndexItemViewModel
     public string Destination { get; set; }
     public int Items { get; set; }
     public decimal Weight { get; set; }
+    public string WeightFormatted => Weight.ToString("0.00");
     public decimal LowestRate { get; set; }
     public string LowestRateFormatted => LowestRate.ToString("0.00");
     public decimal HighestRate { get; set; }
