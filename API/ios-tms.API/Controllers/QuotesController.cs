@@ -1,4 +1,5 @@
-﻿using iOS_TMS.API.ViewModels.Quotes;
+﻿using ios_tms.API.ViewModels.Quotes;
+using iOS_TMS.API.ViewModels.Quotes;
 using iOS_TMS.Core.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,7 +49,7 @@ public class QuotesController : ControllerBase
             return NotFound();
         }
 
-        return Ok();
+        return Ok(QuoteDetailsViewModel.From(quote));
     }
 
     [HttpGet("Rates")]

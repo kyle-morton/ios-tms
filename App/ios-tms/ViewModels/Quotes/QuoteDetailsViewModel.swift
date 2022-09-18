@@ -15,24 +15,16 @@ struct QuoteDetailsViewModel : Identifiable, Codable {
     var items: Int
     var weight: Decimal
     var weightFormatted: String
-    var lowestRate: Decimal
-    var lowestRateFormatted: String
-    var highestRate: Decimal
-    var highestRateFormatted: String
-    var rateCount: Int
+    var rates: [QuoteRateViewModel]
     
-    init(id: Int, origin: String, destination: String, items: Int, weight: Decimal, lowestRate: Decimal, lowestRateFormatted: String, highestRate: Decimal, highestRateFormatted: String, rateCount: Int) {
+    init(id: Int, origin: String, destination: String, items: Int, weight: Decimal, rates: [QuoteRateViewModel]) {
         self.id = id
         self.origin = origin
         self.destination = destination
         self.items = items
         self.weight = weight
-        self.lowestRate = lowestRate
-        self.lowestRateFormatted = lowestRateFormatted
-        self.highestRate = highestRate
-        self.highestRateFormatted = highestRateFormatted
-        self.rateCount = rateCount
         self.weightFormatted = "\(weight)"
+        self.rates = rates
     }
     
 }

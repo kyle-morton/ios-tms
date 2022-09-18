@@ -33,6 +33,8 @@ class QuoteStore: ObservableObject {
         return decodedQuotes
     }
     
+//    func details(id: Int) async throws
+    
     init() {
         self.quotes = []
     }
