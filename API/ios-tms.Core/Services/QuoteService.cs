@@ -1,4 +1,5 @@
-﻿using ios_tms.Core.Helpers;
+﻿using Bogus;
+using ios_tms.Core.Helpers;
 using iOS_TMS.Core.Domain;
 using iOS_TMS.Core.Services.Interfaces;
 
@@ -15,10 +16,15 @@ public class QuoteService : IQuoteService
             _quotes = new List<Quote>();
 
             var quoteFaker = FakerQuoteHelper.GetConfig();
+            var rateFaker = FakerQuoteHelper.GetRateConfig();
 
             Enumerable.Range(1, 10).ToList().ForEach(i =>
             {
-                _quotes.Add(quoteFaker.Generate());
+                var newQuote = quoteFaker.Generate();
+                var rateFaker = FakerQuoteHelper.GetRateConfig(newQuote.Id);
+                newQuote.QuoteRates = rateFaker.Generate(new Faker().Random.Int(1, 8));
+
+                _quotes.Add(newQuote);
             });
         }
     }
@@ -51,9 +57,16 @@ public class QuoteService : IQuoteService
 
     public Quote CreateAsync(Quote quote)
     {
-        //shipment.Id = BogusHelper.NextShipmentId();
-        //shipment.Bol = BogusHelper.NextBOL();
-        //shipment.Rate = new Faker().Random.Decimal(100.00m, 2000.00m);
+        quote.Id = FakerQuoteHelper.NextId();
+        quote.QuoteRates = new List<QuoteRate>();
+
+        var rateFaker = FakerQuoteHelper.GetRateConfig(quote.Id);
+       
+        Enumerable.Range(1, new Faker().Random.Int(1, 6)).ToList().ForEach(i =>
+        {
+            quote.QuoteRates.Add(rateFaker.Generate());
+        });
+
         _quotes.Add(quote);
 
         return quote;

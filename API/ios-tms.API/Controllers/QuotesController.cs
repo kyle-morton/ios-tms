@@ -72,11 +72,12 @@ public class QuotesController : ControllerBase
     //    return Ok(count);
     //}
 
-    //[HttpPost("Create")]
-    //public IActionResult Create(CreateShipmentViewModel viewModel)
-    //{
-    //    var newShipment = _service.CreateAsync(viewModel.ToModel());
-    //    return Ok(newShipment);
-    //}
+    [HttpPost("Create")]
+    public IActionResult Create(CreateQuoteViewModel vm)
+    {
+        var newQuote = _service.CreateAsync(vm.ToModel());
+
+        return Ok(QuoteDetailsViewModel.From(newQuote));
+    }
 }
 
