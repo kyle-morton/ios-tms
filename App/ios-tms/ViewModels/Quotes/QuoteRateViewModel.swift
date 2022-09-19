@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuoteRateViewModel : Codable {
+struct QuoteRateViewModel : Identifiable, Codable {
     
     var id: Int
     var quoteId: Int

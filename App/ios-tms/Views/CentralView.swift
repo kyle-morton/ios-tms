@@ -15,23 +15,18 @@ struct CentralView: View {
     
     var body: some View {
         TabView {
-            ShipmentsView()
-                .tabItem({
-                    Label("Shipments", systemImage: "bus")
-                })
-                .badge(
-                    Text("\(shipmentStore.openShipmentCount)")
-                )
             QuotesView()
                 .tabItem({
                     Label("Quotes", systemImage: "dollarsign.circle")
-//
                 })
             DashboardView()
                 .tabItem({
                     Label("Home", systemImage: "house")
                 })
-
+            ShipmentsView()
+                .tabItem({
+                    Label("Shipments", systemImage: "bus")
+                })
         }
     }
 }

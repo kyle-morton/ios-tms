@@ -34,11 +34,7 @@ class QuoteStore: ObservableObject {
     }
     
     static func getDetails(id: Int) async throws -> QuoteDetailsViewModel {
-        
-        #if DEBUG
-            return QuoteStore.exampleDetails
-        #endif
-        
+
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/details?quoteId=\(id)")
             else { fatalError("Missing URL") }
         

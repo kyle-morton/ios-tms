@@ -12,7 +12,7 @@ public class QuoteDetailsViewModel
     public string Destination { get; set; }
     public int Items { get; set; }
     public decimal Weight { get; set; }
-    public bool IsDeleted { get; set; }
+    public string WeightFormatted => Weight.ToString("0.00");
     public List<QuoteRateViewModel> Rates { get; set; }
 
     public static QuoteDetailsViewModel From(Quote quote)
