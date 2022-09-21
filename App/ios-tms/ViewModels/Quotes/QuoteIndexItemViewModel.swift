@@ -20,8 +20,9 @@ struct QuoteIndexItemViewModel : Identifiable, Codable {
     var highestRate: Decimal
     var highestRateFormatted: String
     var rateCount: Int
+    var pickupDateFormatted: String
     
-    init(id: Int, origin: String, destination: String, items: Int, weight: Decimal, lowestRate: Decimal, lowestRateFormatted: String, highestRate: Decimal, highestRateFormatted: String, rateCount: Int) {
+    init(id: Int, origin: String, destination: String, items: Int, weight: Decimal, lowestRate: Decimal, lowestRateFormatted: String, highestRate: Decimal, highestRateFormatted: String, pickupDateFormatted: String, rateCount: Int) {
         self.id = id
         self.origin = origin
         self.destination = destination
@@ -33,6 +34,7 @@ struct QuoteIndexItemViewModel : Identifiable, Codable {
         self.highestRateFormatted = highestRateFormatted
         self.rateCount = rateCount
         self.weightFormatted = "\(weight)"
+        self.pickupDateFormatted = pickupDateFormatted
     }
     
 }

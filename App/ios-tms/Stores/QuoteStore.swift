@@ -64,19 +64,20 @@ class QuoteStore: ObservableObject {
 
     static var example = QuoteStore(
         quotes: [
-            QuoteIndexItemViewModel(id: 1, origin: "Memphis, TN", destination: "Little Rock, AR", items: 5, weight: 10000, lowestRate: 255, lowestRateFormatted: "255.00", highestRate: 1200, highestRateFormatted: "1200.00", rateCount: 5),
-            QuoteIndexItemViewModel(id: 2, origin: "Memphis, TN", destination: "Austin, TX", items: 2, weight: 2000, lowestRate: 400, lowestRateFormatted: "400.00", highestRate: 877.24, highestRateFormatted: "877.24", rateCount: 5),
-            QuoteIndexItemViewModel(id: 3, origin: "Kansas City, MO", destination: "Brooklyn, NY", items: 5, weight: 10000, lowestRate: 255, lowestRateFormatted: "255.00", highestRate: 1200, highestRateFormatted: "1200.00", rateCount: 5),
+            QuoteIndexItemViewModel(id: 1, origin: "Memphis, TN", destination: "Little Rock, AR", items: 5, weight: 10000, lowestRate: 255, lowestRateFormatted: "255.00", highestRate: 1200, highestRateFormatted: "1200.00", pickupDateFormatted: "9/25/22", rateCount: 5),
+            QuoteIndexItemViewModel(id: 2, origin: "Memphis, TN", destination: "Austin, TX", items: 2, weight: 2000, lowestRate: 400, lowestRateFormatted: "400.00", highestRate: 877.24, highestRateFormatted: "877.24", pickupDateFormatted: "9/10/22", rateCount: 5),
+            QuoteIndexItemViewModel(id: 3, origin: "Kansas City, MO", destination: "Brooklyn, NY", items: 5, weight: 10000, lowestRate: 255, lowestRateFormatted: "255.00", highestRate: 1200, highestRateFormatted: "1200.00", pickupDateFormatted: "9/17/22", rateCount: 5),
         ],
         quoteCount: 3
     )
     
-    static var exampleDetails = QuoteDetailsViewModel(id: 1, origin: "Memphis, TN", destination: "Little Rock, AR", items: 5, weight: 10000, rates: [
-            QuoteRateViewModel(id: 1, quoteId: 1, carrier: "AAA Cooper", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
-            QuoteRateViewModel(id: 2, quoteId: 1, carrier: "FedEx", rate: 500.32, rateFormatted: "500.32", cost: 400.00, costFormatted: "400.00"),
-            QuoteRateViewModel(id: 3, quoteId: 1, carrier: "R&L Carriers", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
-            QuoteRateViewModel(id: 4, quoteId: 1, carrier: "Pitt Ohio", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
-            QuoteRateViewModel(id: 5, quoteId: 1, carrier: "AAA Cooper", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99"),
+    static var exampleDetails = QuoteDetailsViewModel(id: 1, origin: "Memphis, TN", destination: "Little Rock, AR", items: 5, weight: 10000, pickupDateFormatted: "9/25/22",
+        rates: [
+            QuoteRateViewModel(id: 1, quoteId: 1, carrier: "AAA Cooper", rate: 125.45, rateFormatted: "125.45", cost: 100.99, costFormatted: "100.99", pickupDateFormatted: "9/25/22", estDeliveryDateFormatted: "10/1/22"),
+            QuoteRateViewModel(id: 2, quoteId: 1, carrier: "FedEx", rate: 500.32, rateFormatted: "500.32", cost: 400.00, costFormatted: "400.00", pickupDateFormatted: "9/26/22", estDeliveryDateFormatted: "9/30/22"),
+            QuoteRateViewModel(id: 3, quoteId: 1, carrier: "R&L Carriers", rate: 99.45, rateFormatted: "99.45", cost: 99.45, costFormatted: "100.99", pickupDateFormatted: "9/25/22", estDeliveryDateFormatted: "9/29/22"),
+            QuoteRateViewModel(id: 4, quoteId: 1, carrier: "Pitt Ohio", rate: 410.99, rateFormatted: "410.99", cost: 410.00, costFormatted: "100.99", pickupDateFormatted: "9/27/22", estDeliveryDateFormatted: "9/27/22"),
+            QuoteRateViewModel(id: 5, quoteId: 1, carrier: "AAA Cooper", rate: 232.04, rateFormatted: "232.04", cost: 100.99, costFormatted: "100.99", pickupDateFormatted: "9/28/22", estDeliveryDateFormatted: "10/1/22"),
         ]
     )
     

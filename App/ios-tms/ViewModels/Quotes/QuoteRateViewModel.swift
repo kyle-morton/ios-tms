@@ -16,7 +16,9 @@ struct QuoteRateViewModel : Identifiable, Codable {
     var rateFormatted: String
     var cost: Decimal
     var costFormatted: String
-
-    
+//    var pickupDate: Date
+    var pickupDateFormatted: String
+//    var estDeliveryDate: Date
+    var estDeliveryDateFormatted: String
     
 }

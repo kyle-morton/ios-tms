@@ -12,7 +12,22 @@ struct QuoteRateView: View {
     let rate: QuoteRateViewModel
     
     var body: some View {
-        Text("Rate: $\(rate.rateFormatted)")
+        VStack {
+            HStack {
+                Text(rate.carrier)
+                    .font(.headline)
+                Spacer()
+                Text("$\(rate.rateFormatted)")
+                    .font(.subheadline)
+            }
+            HStack {
+                Text("Pickup: \(rate.pickupDateFormatted)")
+                    .font(.caption)
+                Spacer()
+                Text("Est. Delivery: \(rate.estDeliveryDateFormatted)")
+                    .font(.caption)
+            }
+        }
     }
 }
 

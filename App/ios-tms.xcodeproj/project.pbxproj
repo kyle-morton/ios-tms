@@ -227,9 +227,9 @@
 		88A0166228BC5DF800111EA9 /* Shipments */ = {
 			isa = PBXGroup;
 			children = (
-				88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */,
 				88506D3128D7579000242B25 /* Create */,
 				88A0166028BC5DEF00111EA9 /* ShipmentDetailsView.swift */,
+				88A0165A28BC5D9C00111EA9 /* ShipmentsView.swift */,
 				888FFD9228BF10C700479139 /* ShipmentRowView.swift */,
 				888FFD9628C5544200479139 /* ConfirmShipmentView.swift */,
 			);

@@ -12,20 +12,40 @@ struct QuoteDetailsView: View {
     let quote: QuoteIndexItemViewModel
     @State var quoteDetails = QuoteDetailsViewModel()
     
+    func sortedRates() -> [QuoteRateViewModel] {
+        return quoteDetails.rates
+    }
+    
     var body: some View {
         VStack{
             if quoteDetails.id > 0 {
+                HStack {
+                    Image(systemName: "calendar.badge.clock")
+                    Text("Pickup: \(quoteDetails.pickupDateFormatted)")
+                    Spacer()
+                }.padding()
                 List {
-                    ForEach(quoteDetails.rates) { rate in
-                        QuoteRateView(rate: rate)
+                    Section(header: Text("Rates")) {
+                        ForEach(sortedRates()) { rate in
+                            QuoteRateView(rate: rate)
+                        }
+                        .onTapGesture {
+                            
+                        }
                     }
                 }
+                .listStyle(.inset)
             }
         }
         .navigationTitle("Quote: \(quote.id)")
+        .navigationBarTitleDisplayMode(.inline)
         .task {
             do {
-                quoteDetails = try await QuoteStore.getDetails(id: quote.id)
+                #if DEBUG
+                    quoteDetails = QuoteStore.exampleDetails
+                #else
+                    quoteDetails = try await QuoteStore.getDetails(id: quote.id)
+                #endif
             }catch {
                 print("Unable to pull details \(error)")
             }

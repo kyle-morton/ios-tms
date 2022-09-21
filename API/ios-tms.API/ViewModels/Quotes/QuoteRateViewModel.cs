@@ -11,6 +11,10 @@ public class QuoteRateViewModel
     public string RateFormatted => Rate.ToString("0.00");
     public decimal Cost { get; set; }
     public string CostFormatted => Cost.ToString("0.00");
+    public DateTime PickupDate { get; set; }
+    public string PickupDateFormatted => PickupDate.ToString("MM/dd/yyyy");
+    public DateTime EstDeliveryDate { get; set; }
+    public string EstDeliveryDateFormatted => EstDeliveryDate.ToString("MM/dd/yyyy");
 
     public static QuoteRateViewModel From(QuoteRate quoteRate)
     {
@@ -20,7 +24,9 @@ public class QuoteRateViewModel
             QuoteId = quoteRate.QuoteId,
             Carrier = quoteRate.Carrier,
             Rate = quoteRate.Rate,
-            Cost = quoteRate.Cost
+            Cost = quoteRate.Cost,
+            PickupDate = quoteRate.PickupDate,
+            EstDeliveryDate = quoteRate.EstDeliveryDate
         };
     }
 }

@@ -16,8 +16,7 @@ public class QuoteService : IQuoteService
             _quotes = new List<Quote>();
 
             var quoteFaker = FakerQuoteHelper.GetConfig();
-            var rateFaker = FakerQuoteHelper.GetRateConfig();
-
+            
             Enumerable.Range(1, 10).ToList().ForEach(i =>
             {
                 var newQuote = quoteFaker.Generate();

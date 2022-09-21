@@ -16,6 +16,8 @@ public class QuoteIndexItemViewModel
     public decimal HighestRate { get; set; }
     public string HighestRateFormatted => HighestRate.ToString("0.00");
     public int RateCount { get; set; }
+    public DateTime PickupDate { get; set; }
+    public string PickupDateFormatted => PickupDate.ToString("MM/dd/yyyy");
 
     public static QuoteIndexItemViewModel From(Quote quote)
     {
@@ -26,6 +28,7 @@ public class QuoteIndexItemViewModel
             Destination = quote.Destination,
             Items = quote.Items,
             Weight = quote.Weight,
+            PickupDate = quote.PickupDate,
             LowestRate = quote.QuoteRates.Select(r => r.Rate).Min(),
             HighestRate = quote.QuoteRates.Select(r => r.Rate).Max(),
             RateCount = quote.QuoteRates.Count

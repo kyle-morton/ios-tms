@@ -8,6 +8,7 @@ public class CreateQuoteViewModel
     public string Destination { get; set; }
     public int Items { get; set; }
     public decimal Weight { get; set; }
+    public DateTime PickupDate { get; set; }
 
     public Quote ToModel()
     {
@@ -16,7 +17,8 @@ public class CreateQuoteViewModel
             Origin = Origin,
             Destination = Destination,
             Items = Items,
-            Weight = Weight
+            Weight = Weight,
+            PickupDate = PickupDate
         };
     }
 
