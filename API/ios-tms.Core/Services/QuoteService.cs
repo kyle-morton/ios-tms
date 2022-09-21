@@ -20,7 +20,7 @@ public class QuoteService : IQuoteService
             Enumerable.Range(1, 10).ToList().ForEach(i =>
             {
                 var newQuote = quoteFaker.Generate();
-                var rateFaker = FakerQuoteHelper.GetRateConfig(newQuote.Id);
+                var rateFaker = FakerQuoteHelper.GetRateConfig(newQuote.Id, newQuote.PickupDate);
                 newQuote.QuoteRates = rateFaker.Generate(new Faker().Random.Int(1, 8));
 
                 _quotes.Add(newQuote);
@@ -59,7 +59,7 @@ public class QuoteService : IQuoteService
         quote.Id = FakerQuoteHelper.NextId();
         quote.QuoteRates = new List<QuoteRate>();
 
-        var rateFaker = FakerQuoteHelper.GetRateConfig(quote.Id);
+        var rateFaker = FakerQuoteHelper.GetRateConfig(quote.Id, quote.PickupDate);
        
         Enumerable.Range(1, new Faker().Random.Int(1, 6)).ToList().ForEach(i =>
         {
