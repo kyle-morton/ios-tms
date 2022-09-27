@@ -11,49 +11,40 @@ struct QuotesView: View {
     
     @EnvironmentObject var quoteStore: QuoteStore
     
-    @State var showingCreateView = false;
+    @State var navigateToCreateView = false
+    
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(quoteStore.quotes) { quote in
-                    NavigationLink(destination: QuoteDetailsView(quote: quote)) {
-                        QuoteRowView(quote: quote)
+            VStack {
+                List {
+                    ForEach(quoteStore.quotes) { quote in
+                        NavigationLink(destination: QuoteDetailsView(quote: quote)) {
+                            QuoteRowView(quote: quote)
+                        }
                     }
                 }
+                .navigationBarItems(trailing: Button(action: {
+                        navigateToCreateView = true
+                    }) {
+                        Image(systemName: "plus")
+                    })
+                NavigationLink("Navigator",
+                               destination: CreateQuoteView(),
+                               isActive: $navigateToCreateView)
             }
-            .navigationBarItems(trailing: Button(action: {
-                    showingCreateView = true
-                }) {
-                    Image(systemName: "plus")
-                })
-                .sheet(isPresented: $showingCreateView) {
-                    NavigationView {
-                        CreateQuoteView()
-                        .navigationTitle("Create Quote")
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                    Button("Cancel") {
-                                        showingCreateView = false;
-                                    }
-                            };
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("Create") {
-                                    showingCreateView = false;
-                                }
-                            }
-                        };
-                    }
-        
-                }
+
             
+
         }
     }
 }
 
 struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
-        QuotesView()
-            .environmentObject(QuoteStore.example)
+            QuotesView()
+                .environmentObject(QuoteStore.example)
+            .previewInterfaceOrientation(.portrait)
+
     }
 }

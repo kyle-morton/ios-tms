@@ -11,6 +11,8 @@ struct QuoteDetailsView: View {
     
     let quote: QuoteIndexItemViewModel
     @State var quoteDetails = QuoteDetailsViewModel()
+    @State var showingCreateView = false
+    
     
     func sortedRates() -> [QuoteRateViewModel] {
         return quoteDetails.rates
@@ -27,10 +29,16 @@ struct QuoteDetailsView: View {
                 List {
                     Section(header: Text("Rates")) {
                         ForEach(sortedRates()) { rate in
-                            QuoteRateView(rate: rate)
-                        }
-                        .onTapGesture {
-                            
+                            HStack {
+                                QuoteRateView(rate: rate)
+                                Button(action: {
+                                    showingCreateView.toggle()
+                                }){
+                                    Image(systemName: "plus.app")
+                                        .font(.body)
+                                }
+                            }
+ 
                         }
                     }
                 }
@@ -48,6 +56,25 @@ struct QuoteDetailsView: View {
                 #endif
             }catch {
                 print("Unable to pull details \(error)")
+            }
+        }
+        .sheet(isPresented: $showingCreateView) {
+            NavigationView {
+                CreateShipmentFromQuoteView()
+                .navigationTitle("Book Shipment")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                showingCreateView = false;
+                            }
+                    };
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Create") {
+                            showingCreateView = false;
+                        }
+                    }
+                };
             }
         }
     }

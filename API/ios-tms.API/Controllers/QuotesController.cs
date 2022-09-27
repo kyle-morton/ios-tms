@@ -52,18 +52,6 @@ public class QuotesController : ControllerBase
         return Ok(QuoteDetailsViewModel.From(quote));
     }
 
-    [HttpGet("Rates")]
-    public IActionResult GetRates(int quoteId)
-    {
-        var rates = _service.GetQuoteRatesAsync(quoteId)
-            .OrderByDescending(c => c.Id)
-            .ToList();
-
-        var vms = rates.Select(QuoteRateViewModel.From).ToList();
-
-        return Ok(vms);
-    }
-
     //[HttpGet("OpenCount")]
     //public IActionResult GetOpenCount()
     //{
@@ -79,5 +67,16 @@ public class QuotesController : ControllerBase
 
         return Ok(QuoteDetailsViewModel.From(newQuote));
     }
-}
 
+    [HttpGet("Rates")]
+    public IActionResult GetRates(int quoteId)
+    {
+        var rates = _service.GetQuoteRatesAsync(quoteId)
+            .OrderByDescending(c => c.Id)
+            .ToList();
+
+        var vms = rates.Select(QuoteRateViewModel.From).ToList();
+
+        return Ok(vms);
+    }
+}

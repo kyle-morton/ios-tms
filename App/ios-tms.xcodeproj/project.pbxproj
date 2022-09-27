@@ -20,6 +20,7 @@
 		88506D2E28D7572500242B25 /* CarrierOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2D28D7572500242B25 /* CarrierOptionsViewModel.swift */; };
 		88506D3728D758E400242B25 /* CreateQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3628D758E400242B25 /* CreateQuoteView.swift */; };
 		88506D3928D83F0900242B25 /* QuoteRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3828D83F0900242B25 /* QuoteRateView.swift */; };
+		88506D3B28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3A28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift */; };
 		888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9028BF100100479139 /* QuoteDetailsView.swift */; };
 		888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9228BF10C700479139 /* ShipmentRowView.swift */; };
 		888FFD9728C5544200479139 /* ConfirmShipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9628C5544200479139 /* ConfirmShipmentView.swift */; };
@@ -56,6 +57,7 @@
 		88506D2D28D7572500242B25 /* CarrierOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierOptionsViewModel.swift; sourceTree = "<group>"; };
 		88506D3628D758E400242B25 /* CreateQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuoteView.swift; sourceTree = "<group>"; };
 		88506D3828D83F0900242B25 /* QuoteRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRateView.swift; sourceTree = "<group>"; };
+		88506D3A28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShipmentFromQuoteView.swift; sourceTree = "<group>"; };
 		888FFD9028BF100100479139 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
 		888FFD9228BF10C700479139 /* ShipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentRowView.swift; sourceTree = "<group>"; };
 		888FFD9628C5544200479139 /* ConfirmShipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmShipmentView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				88506D3628D758E400242B25 /* CreateQuoteView.swift */,
+				88506D3A28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				888FFDAC28C79BD700479139 /* LoadingView.swift in Sources */,
 				88506D2E28D7572500242B25 /* CarrierOptionsViewModel.swift in Sources */,
 				88506D1728D1867100242B25 /* QuoteRowView.swift in Sources */,
+				88506D3B28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
