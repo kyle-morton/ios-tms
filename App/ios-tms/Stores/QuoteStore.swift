@@ -51,6 +51,28 @@ class QuoteStore: ObservableObject {
         return decodedQuote
     }
     
+    static func createQuote(quote: CreateQuoteViewModel) async throws -> QuoteDetailsViewModel {
+        
+        guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/create")
+            else { fatalError("Missing URL")}
+        
+        let payload = try JSONEncoder().encode(quote)
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpMethod = "POST"
+
+        let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: payload)
+        
+        print("response: \(data)");
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while create quote") }
+        
+        let newQuote = try JSONDecoder().decode(QuoteDetailsViewModel.self, from: data)
+        
+        return newQuote
+    }
+    
     init() {
         self.quotes = []
     }

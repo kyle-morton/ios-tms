@@ -9,16 +9,16 @@ import SwiftUI
 
 struct CreateQuoteView: View {
     
-    @EnvironmentObject var shipmentStore: ShipmentStore
-    @EnvironmentObject var carrierStore: CarrierStore
+    @EnvironmentObject var quoteStore: QuoteStore
     
     @State private var showingConfirmView = false;
     
-    @State private var origin: String = "";
-    @State private var destination: String = "";
-    @State private var selectedCarrier: Int?;
-    @State private var units: Int?;
-    @State private var weightInPounds: Int?;
+    @State private var origin: String = ""
+    @State private var destination: String = ""
+    @State private var selectedCarrier: Int?
+    @State private var units: Int?
+    @State private var weightInPounds: Int?
+    @State private var pickupDate = Date()
     
     var totalPrice: String {
         let formatter = NumberFormatter()
@@ -41,18 +41,25 @@ struct CreateQuoteView: View {
         return true;
     }
     
-    func submitQuote() {
+    func submitQuote() async {
         print("Submitting Quote...")
+        
+        
+        
     }
     
     var body: some View {
         
         Form {
             
-            Section(header: Text("Origin")) {
+            Section(header: Text("Pickup")) {
+                DatePicker(
+                    "Pickup Date",
+                    selection: $pickupDate,
+                    displayedComponents: [.date])
                 TextField("Location", text: $origin)
             }
-            Section(header: Text("Destination")) {
+            Section(header: Text("Delivery")) {
                 TextField("Location", text: $destination)
             }
             Section(header: Text("Items")) {
@@ -74,6 +81,7 @@ struct CreateQuoteView_Previews: PreviewProvider {
     static var previews: some View {
         CreateQuoteView()
             .environmentObject(QuoteStore.example)
+        
     }
 }
 
