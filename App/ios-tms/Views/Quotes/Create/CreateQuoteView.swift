@@ -52,26 +52,29 @@ struct CreateQuoteView: View {
         
         Form {
             
-            Section(header: Text("Pickup")) {
+            Section(header: Text("Origin")) {
                 DatePicker(
                     "Pickup Date",
                     selection: $pickupDate,
                     displayedComponents: [.date])
                 TextField("Location", text: $origin)
             }
-            Section(header: Text("Delivery")) {
+            Section(header: Text("Destination")) {
                 TextField("Location", text: $destination)
             }
             Section(header: Text("Items")) {
-                TextField("Units", value: $units, format: .number)
+                TextField("Pallet Count", value: $units, format: .number)
+            }
+            Section(header: Text("Weight")) {
                 TextField("Weight In Pounds", value: $weightInPounds, format: .number)
             }
-            Button(action:submitQuote) {
+            Button(action: {
+                Task {
+                    await submitQuote()
+                }
+            }, label: {
                 Text("Submit")
-            }
-//            .navigationTitle("New Quote")
-//            .navigationBarTitleDisplayMode(.inline)
-
+            })
         }
     }
     

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuoteDetailsView: View {
     
-    let quote: QuoteIndexItemViewModel
+    let id: Int
     @State var quoteDetails = QuoteDetailsViewModel()
     @State var showingCreateView = false
     
@@ -45,7 +45,7 @@ struct QuoteDetailsView: View {
                 .listStyle(.inset)
             }
         }
-        .navigationTitle("Quote: \(quote.id)")
+        .navigationTitle("Quote: \(id)")
         .navigationBarTitleDisplayMode(.inline)
         .task {
             do {
@@ -83,7 +83,7 @@ struct QuoteDetailsView: View {
 struct QuoteDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         QuoteDetailsView(
-            quote: QuoteStore.example.quotes[0],
+            id: 1,
             quoteDetails: QuoteStore.exampleDetails
         )
     }

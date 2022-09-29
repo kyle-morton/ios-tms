@@ -19,7 +19,7 @@ struct QuotesView: View {
             VStack {
                 List {
                     ForEach(quoteStore.quotes) { quote in
-                        NavigationLink(destination: QuoteDetailsView(quote: quote)) {
+                        NavigationLink(destination: QuoteDetailsView(id: quote.id)) {
                             QuoteRowView(quote: quote)
                         }
                     }
