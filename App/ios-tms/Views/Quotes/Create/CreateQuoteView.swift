@@ -15,30 +15,15 @@ struct CreateQuoteView: View {
     
     @State private var origin: String = ""
     @State private var destination: String = ""
-    @State private var selectedCarrier: Int?
     @State private var units: Int?
     @State private var weightInPounds: Int?
     @State private var pickupDate = Date()
     
-    var totalPrice: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        
-        let total = self.charges.reduce(0, +)
-        return formatter.string(from: NSNumber(value: total)) ?? "$0"
-    }
-    
-    var charges: [Double] {
-        return [
-            100,
-            250,
-            50
-        ]
-    }
-    
-    func validateQuote() -> Bool {
-        // todo - add validation
-        return true;
+    var disableForm: Bool {
+        origin.count < 5
+        || destination.count < 5
+        || units == 0
+        || weightInPounds == 0
     }
     
     func submitQuote() async {
@@ -77,6 +62,7 @@ struct CreateQuoteView: View {
             }, label: {
                 Text("Submit")
             })
+            .disabled(disableForm)
         }
     }
     
