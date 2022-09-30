@@ -43,9 +43,11 @@ struct CreateQuoteView: View {
     
     func submitQuote() async {
         print("Submitting Quote...")
-        
-        
-        
+        do {
+            var newQuote = try await quoteStore.createQuote(quote: CreateQuoteViewModel())
+        } catch {
+    
+        }
     }
     
     var body: some View {

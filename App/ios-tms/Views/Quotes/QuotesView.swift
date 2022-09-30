@@ -29,9 +29,10 @@ struct QuotesView: View {
                     }) {
                         Image(systemName: "plus")
                     })
-                NavigationLink("Navigator",
-                               destination: CreateQuoteView(),
-                               isActive: $navigateToCreateView)
+                    NavigationLink(destination: CreateQuoteView(),
+                               isActive: $navigateToCreateView) {
+                    EmptyView()
+                }
             }
 
             

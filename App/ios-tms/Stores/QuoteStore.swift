@@ -33,7 +33,7 @@ class QuoteStore: ObservableObject {
         return decodedQuotes
     }
     
-    static func getDetails(id: Int) async throws -> QuoteDetailsViewModel {
+    func getDetails(id: Int) async throws -> QuoteDetailsViewModel {
 
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/details?quoteId=\(id)")
             else { fatalError("Missing URL") }
@@ -51,7 +51,7 @@ class QuoteStore: ObservableObject {
         return decodedQuote
     }
     
-    static func createQuote(quote: CreateQuoteViewModel) async throws -> QuoteDetailsViewModel {
+    func createQuote(quote: CreateQuoteViewModel) async throws -> QuoteDetailsViewModel {
         
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/create")
             else { fatalError("Missing URL")}
