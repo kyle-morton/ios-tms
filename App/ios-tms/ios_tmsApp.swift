@@ -15,12 +15,12 @@ struct ios_tmsApp: App {
     @StateObject var carrierStore = CarrierStore()
     
     @State private var errorWrapper: TMSError?;
-    @State private var isLoadingStartingData = true;
+    @State private var initializationModel = InitializationModel();
     
     var body: some Scene {
         WindowGroup {
 //            LoadingView(isShowing: $isLoadingStartingData) {
-                CentralView()
+                CentralView(initializationModel: initializationModel)
                     .task {
                         do {
                             carrierStore.carriers = try await carrierStore.load()
@@ -32,7 +32,7 @@ struct ios_tmsApp: App {
                             errorWrapper = TMSError(error: error, guidance: "Try again later.")
                         }
 
-                        isLoadingStartingData = false
+                        initializationModel.isInitialized = true
                     }
                     .environmentObject(shipmentStore)
                     .environmentObject(carrierStore)

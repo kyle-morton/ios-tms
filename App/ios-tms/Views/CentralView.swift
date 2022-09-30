@@ -9,31 +9,41 @@ import SwiftUI
 
 struct CentralView: View {
     
+    @StateObject var initializationModel: InitializationModel
+    
     @EnvironmentObject var shipmentStore: ShipmentStore
     @EnvironmentObject var carrierStore: CarrierStore
     @EnvironmentObject var quoteStore: QuoteStore
     
     var body: some View {
-        TabView {
-            QuotesView()
-                .tabItem({
-                    Label("Quotes", systemImage: "dollarsign.circle")
-                })
-            DashboardView()
-                .tabItem({
-                    Label("Home", systemImage: "house")
-                })
-            ShipmentsView()
-                .tabItem({
-                    Label("Shipments", systemImage: "bus")
-                })
+        
+        if initializationModel.isInitialized {
+            TabView {
+                QuotesView()
+                    .tabItem({
+                        Label("Quotes", systemImage: "dollarsign.circle")
+                    })
+                DashboardView()
+                    .tabItem({
+                        Label("Home", systemImage: "house")
+                    })
+                ShipmentsView()
+                    .tabItem({
+                        Label("Shipments", systemImage: "bus")
+                    })
+            }
+        }
+        else {
+            VStack {
+                Text("Loading...")
+            }
         }
     }
 }
 
 struct CentralView_Previews: PreviewProvider {
     static var previews: some View {
-        CentralView()
+        CentralView(initializationModel: InitializationModel(isInitialized: true))
             .environmentObject(ShipmentStore.example)
             .environmentObject(CarrierStore.example)
             .environmentObject(QuoteStore.example)

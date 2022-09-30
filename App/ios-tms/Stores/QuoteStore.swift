@@ -64,7 +64,7 @@ class QuoteStore: ObservableObject {
 
         let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: payload)
         
-        print("response: \(data)");
+        print("response: \(data), status code: \((response as? HTTPURLResponse)?.statusCode)");
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while create quote") }
         
