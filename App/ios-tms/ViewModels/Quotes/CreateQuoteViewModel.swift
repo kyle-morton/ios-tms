@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CreateQuoteViewModel : Codable {
+struct QuoteCreateViewModel : Codable {
     
 }

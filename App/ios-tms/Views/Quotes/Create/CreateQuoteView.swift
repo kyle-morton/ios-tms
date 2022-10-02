@@ -15,8 +15,8 @@ struct CreateQuoteView: View {
     
     @State private var origin: String = ""
     @State private var destination: String = ""
-    @State private var units: Int?
-    @State private var weightInPounds: Int?
+    @State private var units: Int? = 0
+    @State private var weightInPounds: Decimal? = 0
     @State private var pickupDate = Date()
     
     var disableForm: Bool {
@@ -29,7 +29,8 @@ struct CreateQuoteView: View {
     func submitQuote() async {
         print("Submitting Quote...")
         do {
-            var newQuote = try await quoteStore.createQuote(quote: CreateQuoteViewModel())
+            var newQuote = QuoteCreateViewModel(origin: origin, destination: destination, items: units ?? 0, weight: weightInPounds ?? 0, pickupDate: pickupDate)
+            var createdQuote = try await  quoteStore.createQuote(quote: newQuote)
         } catch {
     
         }

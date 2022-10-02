@@ -65,7 +65,7 @@ public class QuotesController : ControllerBase
     {
         var newQuote = _service.CreateAsync(vm.ToModel());
 
-        return Ok(QuoteDetailsViewModel.From(newQuote));
+        return Ok(newQuote.Id);
     }
 
     [HttpGet("Rates")]

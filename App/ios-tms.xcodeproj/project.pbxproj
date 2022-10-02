@@ -16,12 +16,13 @@
 		88506D2628D6D7F700242B25 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2528D6D7F700242B25 /* AddressViewModel.swift */; };
 		88506D2828D6D82C00242B25 /* QuoteRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2728D6D82C00242B25 /* QuoteRateViewModel.swift */; };
 		88506D2A28D7569400242B25 /* CarrierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2928D7569400242B25 /* CarrierViewModel.swift */; };
-		88506D2C28D756DD00242B25 /* CreateQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2B28D756DD00242B25 /* CreateQuoteViewModel.swift */; };
+		88506D2C28D756DD00242B25 /* QuoteCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2B28D756DD00242B25 /* QuoteCreateViewModel.swift */; };
 		88506D2E28D7572500242B25 /* CarrierOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D2D28D7572500242B25 /* CarrierOptionsViewModel.swift */; };
 		88506D3728D758E400242B25 /* CreateQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3628D758E400242B25 /* CreateQuoteView.swift */; };
 		88506D3928D83F0900242B25 /* QuoteRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3828D83F0900242B25 /* QuoteRateView.swift */; };
 		88506D3B28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3A28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift */; };
 		88506D3D28E69B7D00242B25 /* InitializationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3C28E69B7D00242B25 /* InitializationModel.swift */; };
+		88506D4028E933F400242B25 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D3F28E933F400242B25 /* DateExtensions.swift */; };
 		888FFD9128BF100100479139 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9028BF100100479139 /* QuoteDetailsView.swift */; };
 		888FFD9328BF10C700479139 /* ShipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9228BF10C700479139 /* ShipmentRowView.swift */; };
 		888FFD9728C5544200479139 /* ConfirmShipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FFD9628C5544200479139 /* ConfirmShipmentView.swift */; };
@@ -54,12 +55,13 @@
 		88506D2528D6D7F700242B25 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		88506D2728D6D82C00242B25 /* QuoteRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRateViewModel.swift; sourceTree = "<group>"; };
 		88506D2928D7569400242B25 /* CarrierViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierViewModel.swift; sourceTree = "<group>"; };
-		88506D2B28D756DD00242B25 /* CreateQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuoteViewModel.swift; sourceTree = "<group>"; };
+		88506D2B28D756DD00242B25 /* QuoteCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCreateViewModel.swift; sourceTree = "<group>"; };
 		88506D2D28D7572500242B25 /* CarrierOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierOptionsViewModel.swift; sourceTree = "<group>"; };
 		88506D3628D758E400242B25 /* CreateQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuoteView.swift; sourceTree = "<group>"; };
 		88506D3828D83F0900242B25 /* QuoteRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRateView.swift; sourceTree = "<group>"; };
 		88506D3A28DC0D0600242B25 /* CreateShipmentFromQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShipmentFromQuoteView.swift; sourceTree = "<group>"; };
 		88506D3C28E69B7D00242B25 /* InitializationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationModel.swift; sourceTree = "<group>"; };
+		88506D3F28E933F400242B25 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		888FFD9028BF100100479139 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
 		888FFD9228BF10C700479139 /* ShipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentRowView.swift; sourceTree = "<group>"; };
 		888FFD9628C5544200479139 /* ConfirmShipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmShipmentView.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 				88506D2128D6D44900242B25 /* QuoteIndexItemViewModel.swift */,
 				88506D2328D6D45400242B25 /* QuoteDetailsViewModel.swift */,
 				88506D2728D6D82C00242B25 /* QuoteRateViewModel.swift */,
-				88506D2B28D756DD00242B25 /* CreateQuoteViewModel.swift */,
+				88506D2B28D756DD00242B25 /* QuoteCreateViewModel.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -151,6 +153,14 @@
 				88506D3828D83F0900242B25 /* QuoteRateView.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		88506D3E28E933E700242B25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88506D3F28E933F400242B25 /* DateExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		888FFD9E28C5557B00479139 /* Protocols */ = {
@@ -188,6 +198,7 @@
 		88A0163D28BC56D200111EA9 /* ios-tms */ = {
 			isa = PBXGroup;
 			children = (
+				88506D3E28E933E700242B25 /* Extensions */,
 				88506D1828D6D0B700242B25 /* ViewModels */,
 				888FFDA428C69BB200479139 /* Helpers */,
 				88A0166F28BDB43400111EA9 /* Stores */,
@@ -343,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88506D3D28E69B7D00242B25 /* InitializationModel.swift in Sources */,
+				88506D4028E933F400242B25 /* DateExtensions.swift in Sources */,
 				88A0165F28BC5DC100111EA9 /* CreateShipmentView.swift in Sources */,
 				888FFDA028C5559000479139 /* TmsStoreProtocol.swift in Sources */,
 				88506D2628D6D7F700242B25 /* AddressViewModel.swift in Sources */,
@@ -365,7 +377,7 @@
 				88A0167128BDB43D00111EA9 /* ShipmentStore.swift in Sources */,
 				88A0166828BC613800111EA9 /* DashboardView.swift in Sources */,
 				88A0166528BC5E2B00111EA9 /* QuotesView.swift in Sources */,
-				88506D2C28D756DD00242B25 /* CreateQuoteViewModel.swift in Sources */,
+				88506D2C28D756DD00242B25 /* QuoteCreateViewModel.swift in Sources */,
 				88A0163F28BC56D200111EA9 /* ios_tmsApp.swift in Sources */,
 				88506D2828D6D82C00242B25 /* QuoteRateViewModel.swift in Sources */,
 				888FFD9B28C554E900479139 /* QuoteStore.swift in Sources */,

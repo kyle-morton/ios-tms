@@ -51,26 +51,36 @@ class QuoteStore: ObservableObject {
         return decodedQuote
     }
     
-    func createQuote(quote: CreateQuoteViewModel) async throws -> QuoteDetailsViewModel {
+    func createQuote(quote: QuoteCreateViewModel) async throws -> Int {
         
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/create")
             else { fatalError("Missing URL")}
         
         let payload = try JSONEncoder().encode(quote)
+        let jsonString = String(data: payload,
+                                encoding: .utf8)
+        
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
+        
+        print("request: \(jsonString)");
+        print("url: \(url)");
 
         let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: payload)
         
-        print("response: \(data), status code: \((response as? HTTPURLResponse)?.statusCode)");
+        let httpResponse = response as? HTTPURLResponse
         
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while create quote") }
+        let dataStr = String(data: data, encoding: String.Encoding.utf8)
         
-        let newQuote = try JSONDecoder().decode(QuoteDetailsViewModel.self, from: data)
+        print("response: \(dataStr), response: \(httpResponse)");
         
-        return newQuote
+        guard httpResponse?.statusCode == 200 else { fatalError("Error while create quote") }
+        
+        let newQuoteId = try JSONDecoder().decode(Int.self, from: data)
+        
+        return newQuoteId
     }
     
     init() {
