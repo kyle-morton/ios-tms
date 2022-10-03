@@ -19,13 +19,13 @@ struct CentralView: View {
         
         if initializationModel.isInitialized {
             TabView {
-                QuotesView()
-                    .tabItem({
-                        Label("Quotes", systemImage: "dollarsign.circle")
-                    })
                 DashboardView()
                     .tabItem({
                         Label("Home", systemImage: "house")
+                    })
+                QuotesView()
+                    .tabItem({
+                        Label("Quotes", systemImage: "dollarsign.circle")
                     })
                 ShipmentsView()
                     .tabItem({

@@ -10,15 +10,17 @@ import SwiftUI
 struct CreateQuoteView: View {
     
     @EnvironmentObject var quoteStore: QuoteStore
-    @State private var errorWrapper: TMSError?;
+    @State private var errorWrapper: TMSError?
     
-    @State private var showingConfirmView = false;
+//    @State private var showingConfirmView = false
+    @State private var navigateToDetailsView = false
     
     @State private var origin: String = ""
     @State private var destination: String = ""
     @State private var units: Int? = 0
     @State private var weightInPounds: Decimal? = 0
     @State private var pickupDate = Date()
+    @State private var newQuoteId: Int = 0
     
     var disableForm: Bool {
         origin.count < 5
@@ -32,6 +34,14 @@ struct CreateQuoteView: View {
         do {
             var newQuote = QuoteCreateViewModel(origin: origin, destination: destination, items: units ?? 0, weight: weightInPounds ?? 0, pickupDate: pickupDate)
             var createQuoteResponse = try await  quoteStore.createQuote(quote: newQuote)
+            
+            if (createQuoteResponse.isSuccess) {
+                newQuoteId = createQuoteResponse.objectId!
+                navigateToDetailsView = true
+            }
+            else {
+                // display error here
+            }
         } catch {
             errorWrapper = TMSError(error: error, guidance: "Try again later.")
         }
@@ -68,11 +78,15 @@ struct CreateQuoteView: View {
         }
         
         .sheet(item: $errorWrapper, onDismiss: {
-//            store.scrums = DailyScrum.sampleData;
             // do something here if you get an error?
         }) { wrapper in
             ErrorView(errorWrapper: wrapper)
-        };
+        }
+        
+        NavigationLink(destination: QuoteDetailsView(id: newQuoteId),
+                   isActive: $navigateToDetailsView) {
+            EmptyView()
+        }
     }
     
 }

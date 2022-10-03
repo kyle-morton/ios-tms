@@ -13,6 +13,8 @@ struct QuoteDetailsView: View {
     @State var quoteDetails = QuoteDetailsViewModel()
     @State var showingCreateView = false
     
+    @EnvironmentObject var quoteStore: QuoteStore
+    
     
     func sortedRates() -> [QuoteRateViewModel] {
         return quoteDetails.rates
@@ -49,12 +51,12 @@ struct QuoteDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             do {
-                #if DEBUG
-                    quoteDetails = QuoteStore.exampleDetails
-                #else
-                    quoteDetails = try await QuoteStore.getDetails(id: quote.id)
-                #endif
-            }catch {
+//                #if DEBUG
+//                    quoteDetails = QuoteStore.exampleDetails
+//                #else
+                    quoteDetails = try await quoteStore.getDetails(id: id)
+//                #endif
+            } catch {
                 print("Unable to pull details \(error)")
             }
         }
@@ -86,5 +88,6 @@ struct QuoteDetailsView_Previews: PreviewProvider {
             id: 1,
             quoteDetails: QuoteStore.exampleDetails
         )
+        .environmentObject(QuoteStore.example)
     }
 }

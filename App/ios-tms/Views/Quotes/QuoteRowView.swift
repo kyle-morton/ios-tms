@@ -19,12 +19,16 @@ struct QuoteRowView: View {
                     .fontWeight(.bold)
                     .font(.headline)
 //                Spacer()
-                Text("Pickup: \(quote.pickupDateFormatted)")
+                Image(systemName: "calendar")
+                    .foregroundColor(.green)
+                Text("\(quote.pickupDateFormatted)")
                     .font(.footnote)
                     .foregroundColor(.green)
             }
             HStack {
-//                Image(systemName: "mappin")
+
+            }
+            HStack {
                 Text("\(quote.origin)")
                     .font(.caption)
                 Text(" > ")

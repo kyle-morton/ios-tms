@@ -52,7 +52,6 @@ struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
             QuotesView()
                 .environmentObject(QuoteStore.example)
-            .previewInterfaceOrientation(.portrait)
 
     }
 }

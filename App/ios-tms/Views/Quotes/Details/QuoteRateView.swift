@@ -12,6 +12,7 @@ struct QuoteRateView: View {
     let rate: QuoteRateViewModel
     
     var body: some View {
+        
         VStack {
             HStack {
                 Text(rate.carrier)

@@ -27,7 +27,9 @@ public class QuoteDetailsViewModel
             Items = quote.Items,
             Weight = quote.Weight,
             PickupDate = quote.PickupDate,
-            Rates = quote.QuoteRates.Select(QuoteRateViewModel.From).ToList()
+            Rates = quote.QuoteRates
+                .OrderBy(r => r.Rate)
+                .Select(QuoteRateViewModel.From).ToList()
         };
     }
 
