@@ -24,6 +24,13 @@ struct QuotesView: View {
                         }
                     }
                 }
+                .refreshable {
+                    do {
+                        quoteStore.quotes = try await quoteStore.load()
+                    } catch {
+                        
+                    }
+                }
                 .navigationBarItems(trailing: Button(action: {
                         navigateToCreateView = true
                     }) {

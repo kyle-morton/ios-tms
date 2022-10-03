@@ -37,8 +37,13 @@ struct ios_tmsApp: App {
                     .environmentObject(shipmentStore)
                     .environmentObject(carrierStore)
                     .environmentObject(quoteStore)
+                    .sheet(item: $errorWrapper, onDismiss: {
+            //            store.scrums = DailyScrum.sampleData;
+                        // do something here if you get an error?
+                    }) { wrapper in
+                        ErrorView(errorWrapper: wrapper)
+                    };
 //            }
-
         }
     }
 }

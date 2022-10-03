@@ -51,36 +51,40 @@ class QuoteStore: ObservableObject {
         return decodedQuote
     }
     
-    func createQuote(quote: QuoteCreateViewModel) async throws -> Int {
+    func createQuote(quote: QuoteCreateViewModel) async throws -> StoreResponseModel {
         
         guard let url = URL(string:"\(ConfigurationHelper.apiBaseUrl)/quotes/create")
-            else { fatalError("Missing URL")}
+            else {
+            print("Error: Missing URL")
+            return StoreResponseModel(message: "Unable to create quote", isSuccess: false)
+//            fatalError("Missing URL")
+        }
         
         let payload = try JSONEncoder().encode(quote)
-        let jsonString = String(data: payload,
-                                encoding: .utf8)
-        
+//        let jsonString = String(data: payload, encoding: .utf8)
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
         
-        print("request: \(jsonString)");
-        print("url: \(url)");
+//        print("request: \(jsonString ?? "")");
+//        print("url: \(url)");
 
         let (data, response) = try await URLSession.shared.upload(for: urlRequest, from: payload)
         
         let httpResponse = response as? HTTPURLResponse
         
-        let dataStr = String(data: data, encoding: String.Encoding.utf8)
+//        let dataStr = String(data: data, encoding: String.Encoding.utf8)
+//        print("response: \(dataStr ?? <#default value#>), response: \(httpResponse)");
         
-        print("response: \(dataStr), response: \(httpResponse)");
-        
-        guard httpResponse?.statusCode == 200 else { fatalError("Error while create quote") }
+        guard httpResponse?.statusCode == 200 else {
+            print("Error: Invalid Status code on quote create \(httpResponse?.statusCode ?? 0)")
+            return StoreResponseModel(message: "Unable to create quote", isSuccess: false)
+        }
         
         let newQuoteId = try JSONDecoder().decode(Int.self, from: data)
         
-        return newQuoteId
+        return StoreResponseModel(objectId: newQuoteId, isSuccess: true)
     }
     
     init() {

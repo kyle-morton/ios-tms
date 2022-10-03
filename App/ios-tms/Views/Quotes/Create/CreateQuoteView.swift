@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateQuoteView: View {
     
     @EnvironmentObject var quoteStore: QuoteStore
+    @State private var errorWrapper: TMSError?;
     
     @State private var showingConfirmView = false;
     
@@ -30,9 +31,9 @@ struct CreateQuoteView: View {
         print("Submitting Quote...")
         do {
             var newQuote = QuoteCreateViewModel(origin: origin, destination: destination, items: units ?? 0, weight: weightInPounds ?? 0, pickupDate: pickupDate)
-            var createdQuote = try await  quoteStore.createQuote(quote: newQuote)
+            var createQuoteResponse = try await  quoteStore.createQuote(quote: newQuote)
         } catch {
-    
+            errorWrapper = TMSError(error: error, guidance: "Try again later.")
         }
     }
     
@@ -65,6 +66,13 @@ struct CreateQuoteView: View {
             })
             .disabled(disableForm)
         }
+        
+        .sheet(item: $errorWrapper, onDismiss: {
+//            store.scrums = DailyScrum.sampleData;
+            // do something here if you get an error?
+        }) { wrapper in
+            ErrorView(errorWrapper: wrapper)
+        };
     }
     
 }
