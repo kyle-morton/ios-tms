@@ -22,6 +22,8 @@ struct CreateQuoteView: View {
     @State private var pickupDate = Date()
     @State private var newQuoteId: Int = 0
     
+    @State private var originSearch = ""
+    
     var disableForm: Bool {
         origin.count < 5
         || destination.count < 5
@@ -30,10 +32,9 @@ struct CreateQuoteView: View {
     }
     
     func submitQuote() async {
-        print("Submitting Quote...")
         do {
-            var newQuote = QuoteCreateViewModel(origin: origin, destination: destination, items: units ?? 0, weight: weightInPounds ?? 0, pickupDate: pickupDate)
-            var createQuoteResponse = try await  quoteStore.createQuote(quote: newQuote)
+            let newQuote = QuoteCreateViewModel(origin: origin, destination: destination, items: units ?? 0, weight: weightInPounds ?? 0, pickupDate: pickupDate)
+            let createQuoteResponse = try await  quoteStore.createQuote(quote: newQuote)
             
             if (createQuoteResponse.isSuccess) {
                 newQuoteId = createQuoteResponse.objectId!
@@ -57,6 +58,7 @@ struct CreateQuoteView: View {
                     selection: $pickupDate,
                     displayedComponents: [.date])
                 TextField("Location", text: $origin)
+//                    .searchable(text: $originSearch)
             }
             Section(header: Text("Destination")) {
                 TextField("Location", text: $destination)
@@ -87,6 +89,7 @@ struct CreateQuoteView: View {
                    isActive: $navigateToDetailsView) {
             EmptyView()
         }
+       .isDetailLink(false)
     }
     
 }

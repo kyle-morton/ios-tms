@@ -15,15 +15,19 @@ struct ShipmentsView: View {
     @State var isLoadingShipments = true
     @State var showingCreateView = false;
     
+    @State var searchText = ""
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(shipmentStore.shipments) { shipment in
-                    NavigationLink(destination: ShipmentDetailsView(shipment: shipment)) {
+                    NavigationLink(destination: ShipmentDetailsView(shipment: shipment) ) {
                         ShipmentRowView(shipment: shipment)
                     }
+                    .isDetailLink(false)
                 }
             }
+            .searchable(text: $searchText)
             .navigationBarItems(trailing: Button(action: {
                     showingCreateView = true
                 }) {

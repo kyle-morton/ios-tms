@@ -49,3 +49,4 @@ struct CentralView_Previews: PreviewProvider {
             .environmentObject(QuoteStore.example)
     }
 }
+ 

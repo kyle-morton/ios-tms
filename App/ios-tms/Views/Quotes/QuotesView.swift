@@ -22,6 +22,7 @@ struct QuotesView: View {
                         NavigationLink(destination: QuoteDetailsView(id: quote.id)) {
                             QuoteRowView(quote: quote)
                         }
+                        .isDetailLink(false)
                     }
                 }
                 .refreshable {
@@ -40,6 +41,7 @@ struct QuotesView: View {
                                isActive: $navigateToCreateView) {
                     EmptyView()
                 }
+               .isDetailLink(false)
             }
 
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884D372428F24F87005E6E83 /* SandboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884D372328F24F87005E6E83 /* SandboxView.swift */; };
 		88506D1728D1867100242B25 /* QuoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1628D1867100242B25 /* QuoteRowView.swift */; };
 		88506D1C28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1B28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift */; };
 		88506D1E28D6D14400242B25 /* ShipmentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88506D1D28D6D14400242B25 /* ShipmentDetailsViewModel.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		884D372328F24F87005E6E83 /* SandboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxView.swift; sourceTree = "<group>"; };
 		88506D1628D1867100242B25 /* QuoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRowView.swift; sourceTree = "<group>"; };
 		88506D1B28D6D0FF00242B25 /* ShipmentIndexItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentIndexItemViewModel.swift; sourceTree = "<group>"; };
 		88506D1D28D6D14400242B25 /* ShipmentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				88A0165828BC5D7700111EA9 /* CentralView.swift */,
 				888FFDA928C6A2C200479139 /* ErrorView.swift */,
 				888FFDAB28C79BD600479139 /* LoadingView.swift */,
+				884D372328F24F87005E6E83 /* SandboxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				888FFDA828C6A29B00479139 /* TMSError.swift in Sources */,
 				88506D2A28D7569400242B25 /* CarrierViewModel.swift in Sources */,
 				88A0166128BC5DEF00111EA9 /* ShipmentDetailsView.swift in Sources */,
+				884D372428F24F87005E6E83 /* SandboxView.swift in Sources */,
 				88506D1E28D6D14400242B25 /* ShipmentDetailsViewModel.swift in Sources */,
 				888FFDA628C69BBA00479139 /* ConfigurationHelper.swift in Sources */,
 				88506D2228D6D44900242B25 /* QuoteIndexItemViewModel.swift in Sources */,

@@ -19,13 +19,13 @@ struct ios_tmsApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            LoadingView(isShowing: $isLoadingStartingData) {
+     
                 CentralView(initializationModel: initializationModel)
                     .task {
                         do {
-                            carrierStore.carriers = try await carrierStore.load()
+//                            carrierStore.carriers = try await carrierStore.load()
                             shipmentStore.shipments = try await shipmentStore.load()
-                            shipmentStore.openShipmentCount = try await shipmentStore.getOpenShipmentCount()
+//                            shipmentStore.openShipmentCount = try await shipmentStore.getOpenShipmentCount()
                             quoteStore.quotes = try await quoteStore.load()
                         }
                         catch {
@@ -43,7 +43,9 @@ struct ios_tmsApp: App {
                     }) { wrapper in
                         ErrorView(errorWrapper: wrapper)
                     };
-//            }
-        }
+            }
+            
+//            SandboxView()
+//        }
     }
 }
